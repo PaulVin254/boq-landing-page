@@ -49,13 +49,33 @@ export default function NavBar() {
             </Button>
           </div>
           <div className="flex sm:hidden">
-            <Link href="/" className="font-light tracking-tighter text-lg">
-              Acme
+            <Link href="/" className="flex items-center gap-2">
+              <img
+                src="/eris-engineering-logo.svg"
+                alt="Eris Engineering Logo"
+                className="h-8 w-auto dark:hidden block"
+              />
+              <img
+                src="/eris-engineering-logo-dark.svg"
+                alt="Eris Engineering Logo"
+                className="h-8 w-auto hidden dark:block"
+              />
+              <span className="sr-only">Eris Engineering</span>
             </Link>
           </div>
           <div className="hidden sm:flex items-center space-x-8">
-            <Link href="/" className="font-light tracking-tighter text-2xl">
-              Acme
+            <Link href="/" className="flex items-center gap-2">
+              <img
+                src="/eris-engineering-logo.svg"
+                alt="Eris Engineering Logo"
+                className="h-10 w-auto dark:hidden block"
+              />
+              <img
+                src="/eris-engineering-logo-dark.svg"
+                alt="Eris Engineering Logo"
+                className="h-10 w-auto hidden dark:block"
+              />
+              <span className="sr-only">Eris Engineering</span>
             </Link>
 
             <Button asChild variant="ghost" size="sm">

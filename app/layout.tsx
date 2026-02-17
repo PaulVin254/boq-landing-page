@@ -4,8 +4,15 @@ import { Providers } from "./providers";
 import NavBar from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "SaaS Landing Template",
-  description: "Landing Page template.",
+  title: "Eris Engineering - Civil & Structural Services",
+  description:
+    "Stop Getting Overcharged on Your Construction Projects. Get Your Free BOQ Audit.",
+  icons: {
+    icon: [
+      { url: "/eris-favicon.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/eris-favicon-dark.svg", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export default function RootLayout({
