@@ -1,22 +1,12 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Hero() {
   return (
     <div className="relative justify-center items-center">
-      <section className="max-w-(--breakpoint-xl) mx-auto px-4 py-28 gap-12 md:px-8 flex flex-col justify-center items-center">
+      <section className="max-w-(--breakpoint-xl) mx-auto px-4 py-12 md:py-28 gap-12 md:px-8 flex flex-col justify-center items-center">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{
@@ -24,58 +14,66 @@ export default function Hero() {
             opacity: 1,
           }}
           transition={{ duration: 0.6, type: "spring", bounce: 0 }}
-          className="flex flex-col justify-center items-center space-y-5 max-w-4xl mx-auto text-center"
+          className="flex flex-col justify-center items-center space-y-5 max-w-5xl mx-auto text-center"
         >
-          <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
-            New template!
+          {/* Audience Callout */}
+          <span className="w-fit text-xs md:text-sm font-bold bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 px-4 py-2 border border-red-200 dark:border-red-800 rounded-full uppercase tracking-wide">
+            ATTENTION: Property Owners in Karen, Runda, and Muthaiga with active
+            projects exceeding KES 50M
           </span>
-          <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl text-pretty bg-linear-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
-            Beautiful Landing Page Template for SaaS Startups
+
+          {/* Headline */}
+          <h1 className="text-4xl font-bold tracking-tighter mx-auto md:text-6xl text-pretty text-foreground">
+            Your Current BOQ is Carrying{" "}
+            <span className="text-red-600 dark:text-red-500">
+              KES 6,280,000
+            </span>{" "}
+            in <span className="italic">&ldquo;Phantom Materials&rdquo;</span>{" "}
+            That Will Never See Your Site.
           </h1>
+
+          {/* Subheadline */}
           <p className="max-w-2xl text-lg mx-auto text-muted-foreground text-balance">
-            Create your next landing page using this free template.
+            Our independent audit reveals hidden costs, inflated quantities, and
+            structural shortcuts before you sign the next cheque. Don&apos;t be
+            the next victim.
           </p>
+
+          {/* CTA */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0"
+            className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 pt-4"
           >
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="shadow-lg">See more</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Gonzalo Chalé</DialogTitle>
-                  <DialogDescription>
-                    I&apos;m Software Engineer from Cancún, México, always
-                    building things for the web.
-                  </DialogDescription>
-                </DialogHeader>
-                <DialogFooter>
-                  <Button asChild size="sm">
-                    <Link href="https://x.com/gonzalochale" target="_blank">
-                      Connect on{" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        fill="none"
-                        viewBox="0 0 1200 1227"
-                        className="ml-1"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-                        />
-                      </svg>
-                    </Link>
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+            <Button
+              size="lg"
+              className="shadow-xl text-lg px-8 py-6 bg-sky-900 hover:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 text-white"
+            >
+              Get Your Free Audit
+            </Button>
           </motion.div>
         </motion.div>
+
+        {/* Before/After Image Placeholder */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2, type: "spring", bounce: 0 }}
+          className="w-full max-w-5xl mt-12 border rounded-xl bg-muted/50 aspect-video flex items-center justify-center text-muted-foreground relative overflow-hidden shadow-2xl"
+        >
+          {/* Replace this placeholder with your actual image:
+              <img src="/audit-report.png" alt="Before/After BOQ Audit Report" className="w-full h-full object-cover" /> */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900 text-slate-400 p-8 text-center border-2 border-dashed border-slate-300 dark:border-slate-700 m-4 rounded-lg">
+            <p className="font-semibold text-xl">
+              PLACEHOLDER: Before/After Audit Report Image
+            </p>
+            <p className="text-sm mt-2">
+              Show a side-by-side of &ldquo;Inflated BOQ&rdquo; vs
+              &ldquo;Audited BOQ&rdquo; with highlighted savings
+            </p>
+          </div>
+        </motion.div>
       </section>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -83,7 +81,7 @@ export default function Hero() {
         className="w-full h-full absolute -top-32 flex justify-end items-center pointer-events-none "
       >
         <div className="w-3/4 flex justify-center items-center">
-          <div className="w-12 h-[600px] bg-light blur-[70px] rounded-3xl max-sm:rotate-15 sm:rotate-35 will-change-transform"></div>
+          <div className="w-12 h-[600px] bg-red-500/10 blur-[90px] rounded-3xl max-sm:rotate-15 sm:rotate-35 will-change-transform"></div>
         </div>
       </motion.div>
     </div>
