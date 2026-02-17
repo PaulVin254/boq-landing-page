@@ -1,4 +1,6 @@
 import Hero from "@/components/hero";
+import ProblemSection from "@/components/problem-section";
+import ComparisonSection from "@/components/comparison-section";
 import Partners from "@/components/partners";
 import Stats from "@/components/stats";
 import Testimonials from "@/components/testimonials";
@@ -10,6 +12,8 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-dvh">
       <Hero />
+      <ProblemSection />
+      <ComparisonSection />
       <Partners />
       <Testimonials />
       <Stats />
