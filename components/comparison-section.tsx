@@ -195,23 +195,32 @@ export default function ComparisonSection() {
                         Y16 High-Yield Reinforcement
                       </td>
                       <td className="px-4 py-3 text-right font-mono font-bold text-red-400 relative">
-                        <span className="relative z-10">14,500</span>
-                        {/* Red Circle SVG */}
-                        <svg
-                          className="absolute -inset-2 z-0"
-                          viewBox="0 0 100 40"
-                          preserveAspectRatio="none"
-                        >
-                          <ellipse
-                            cx="50"
-                            cy="20"
-                            rx="45"
-                            ry="15"
-                            fill="none"
-                            stroke="#DC2626"
-                            strokeWidth="3"
-                          />
-                        </svg>
+                        {/* Mobile Highlight: Simple box */}
+                        <span className="relative z-10 md:hidden bg-red-900/50 px-1 rounded ring-1 ring-red-500">
+                          14,500
+                        </span>
+
+                        {/* Desktop Highlight: Red Circle SVG */}
+                        <div className="hidden md:block absolute -inset-2 z-0">
+                          <svg
+                            className="w-full h-full"
+                            viewBox="0 0 100 40"
+                            preserveAspectRatio="none"
+                          >
+                            <ellipse
+                              cx="50"
+                              cy="20"
+                              rx="45"
+                              ry="15"
+                              fill="none"
+                              stroke="#DC2626"
+                              strokeWidth="3"
+                            />
+                          </svg>
+                        </div>
+                        <span className="relative z-10 hidden md:inline">
+                          14,500
+                        </span>
                       </td>
                       <td className="px-4 py-3 text-right font-mono text-slate-400">
                         kg
