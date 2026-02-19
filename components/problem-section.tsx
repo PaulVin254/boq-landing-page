@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 const problems = [
   {
     number: "01",
-    title: "The Rebar Switch",
     hook: "Your contractor is committing fraud. Right now.",
     body: [
       "You are paying for D16 high-tensile rebar. Walk onto your site and measure the reinforcement in your columns \u2014 you will find D12.",
-      'To the untrained eye, it looks like progress. To the forensic engineer, it is "theft by specification."',
       "The difference is a KES 6,280,000 Phantom Margin that exists only in your contractor's account.",
     ],
     stat: "KES 6.28M",
@@ -17,11 +15,9 @@ const problems = [
   },
   {
     number: "02",
-    title: 'The "Authorized" Leakage',
     hook: "They are counting on the fact that you will never check.",
     body: [
-      '"Normalized Leakage." A systematic, calculated exploitation of complexity in the Nairobi construction sector.',
-      "Contractors know you have mastered the boardroom \u2014 not the bending schedule. They bank on you never cross-referencing a 200-page BOQ against your structural engineering specifications.",
+      "Contractors know you haven't mastered the bending schedule. They bank on you never cross-referencing a 200-page BOQ against your structural engineering specifications.",
       'The result: you are unknowingly paying a 12\u201315% "Tax" on your own asset. Every single month.',
     ],
     stat: "12\u201315%",
@@ -29,7 +25,6 @@ const problems = [
   },
   {
     number: "03",
-    title: 'The "Mkubwa" Tax',
     hook: "Your status is being used as a weapon against you.",
     body: [
       "While you are presiding over a board meeting, your project team is treating your account like an open ATM.",
