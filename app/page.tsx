@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import ProblemSection from "@/components/problem-section";
+import ProtocolSection from "@/components/protocol-section";
 import ComparisonSection from "@/components/comparison-section";
 import Partners from "@/components/partners";
 import Stats from "@/components/stats";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="flex flex-col min-h-dvh">
       <Hero />
       <ProblemSection />
+      <ProtocolSection />
       <ComparisonSection />
       <Partners />
       <Testimonials />
