@@ -10,6 +10,7 @@
   --color-light: var(--light);
   --color-card: var(--card);
   --color-border: var(--border);
+  --color-neon: #CFFF04;
 }
 
 @layer utilities {

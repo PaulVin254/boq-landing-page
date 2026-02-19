@@ -1,130 +1,170 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ExclamationTriangleIcon,
-  LinkBreak2Icon,
-  SewingPinFilledIcon,
-} from "@radix-ui/react-icons";
 
 const problems = [
   {
+    number: "01",
     title: "The Rebar Switch",
-    body: (
-      <>
-        Right now, as you read this, your contractor is billing you for D16
-        high-tensile rebar. But if you walk onto your site and measure the
-        reinforcement in your columns, you will find D12. To the untrained eye,
-        it looks like progress. To the forensic engineer, it is theft. You are
-        paying for the weight and cost of D16, but receiving the structural
-        capacity of D12. The difference? A KES 6,280,000{" "}
-        <span className="font-bold text-red-600 dark:text-red-400">
-          "Phantom Margin"
-        </span>{" "}
-        that exists only in your contractor’s bank account.
-      </>
-    ),
-    icon: <LinkBreak2Icon className="w-6 h-6 text-red-600" />,
+    hook: "Your contractor is committing fraud. Right now.",
+    body: [
+      "You are paying for D16 high-tensile rebar. Walk onto your site and measure the reinforcement in your columns \u2014 you will find D12.",
+      'To the untrained eye, it looks like progress. To the forensic engineer, it is "theft by specification."',
+      "The difference is a KES 6,280,000 Phantom Margin that exists only in your contractor's account.",
+    ],
+    stat: "KES 6.28M",
+    statLabel: "Phantom Margin Per Project",
   },
   {
+    number: "02",
     title: 'The "Authorized" Leakage',
-    body: (
-      <>
-        In the Nairobi luxury sector, this is called "Normalized Leakage." It is
-        a systematic, calculated exploitation of the complexity found in your
-        structural plans. Contractors know you are a busy individual. They know
-        you have mastered the boardroom, not the bending schedule. They bank on
-        the fact that you will never cross-reference a 200-page Bill of
-        Quantities (BOQ) against the actual structural engineering
-        specifications. The Result: You are unknowingly paying a 12% to 15%{" "}
-        <span className="font-bold text-red-600 dark:text-red-400">"Tax"</span>{" "}
-        on your own asset.
-      </>
-    ),
-    icon: <ExclamationTriangleIcon className="w-6 h-6 text-orange-500" />,
+    hook: "They are counting on the fact that you will never check.",
+    body: [
+      '"Normalized Leakage." A systematic, calculated exploitation of complexity in the Nairobi construction sector.',
+      "Contractors know you have mastered the boardroom \u2014 not the bending schedule. They bank on you never cross-referencing a 200-page BOQ against your structural engineering specifications.",
+      'The result: you are unknowingly paying a 12\u201315% "Tax" on your own asset. Every single month.',
+    ],
+    stat: "12\u201315%",
+    statLabel: "Silent Tax on Your Asset",
   },
   {
+    number: "03",
     title: 'The "Mkubwa" Tax',
-    body: (
-      <>
-        While you are stuck in traffic on the bypass or presiding over a board
-        meeting, your project team is laughing. They use your status as a{" "}
-        <span className="font-bold text-red-600 dark:text-red-400">
-          "Titan"
-        </span>{" "}
-        against you. They assume you are "above" checking the unit rates of C25
-        concrete or the tonnage of Y-specification steel. They treat your
-        project like an open ATM. Every "unforeseen" variation and every padded
-        material spec is a direct withdrawal from your legacy. Losing KES 6.2M
-        might not break your balance sheet—but being{" "}
-        <span className="font-bold text-red-600 dark:text-red-400">
-          "The Sucker"
-        </span>{" "}
-        in a KES 100M transaction is a terminal blow to your authority.
-      </>
-    ),
-    icon: <SewingPinFilledIcon className="w-6 h-6 text-yellow-500" />,
+    hook: "Your status is being used as a weapon against you.",
+    body: [
+      "While you are presiding over a board meeting, your project team is treating your account like an open ATM.",
+      "They assume you are above checking unit rates of C25 concrete. Every padded material spec is a direct, calculated withdrawal from your legacy.",
+      "Losing KES 6.2M might not break your balance sheet. But being the sucker in a KES 100M transaction is a terminal blow to your authority.",
+    ],
+    stat: "KES 100M",
+    statLabel: "Project Value at Risk",
   },
 ];
 
+// X Icon SVG inline for max control
+const XMark = () => (
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    aria-hidden="true"
+  >
+    <circle cx="14" cy="14" r="14" fill="#CFFF04" fillOpacity="0.12" />
+    <path
+      d="M9 9l10 10M19 9L9 19"
+      stroke="#CFFF04"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
 export default function ProblemSection() {
   return (
-    <section className="w-full py-20 bg-muted/30 dark:bg-muted/10 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-          {/* Left Column: The Hook (Sticky) */}
-          <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-6">
+    <section className="w-full py-20 md:py-28 bg-black text-white relative overflow-hidden">
+      {/* Subtle noise texture overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20 space-y-4"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-neon">
+            The Cold Hard Truth
+          </p>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight text-white">
+            Your BOQ is a<br />
+            <span className="text-neon">Work of Fiction.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed pt-4">
+            Most property owners believe their Bill of Quantities is a fixed
+            contract. In reality, it is often a carefully constructed illusion —
+            designed to look professional while concealing theft.
+          </p>
+        </motion.div>
+
+        {/* Problem Cards */}
+        <div className="space-y-0 divide-y divide-zinc-800">
+          {problems.map((item, index) => (
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="group grid md:grid-cols-[1fr_auto] gap-8 items-start py-12 md:py-16"
             >
-              <div className="w-12 h-1 bg-red-600 mb-6 rounded-full" />
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-pretty">
-                The Hidden Cost of Trust
-              </h2>
-              <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                Most property owners believe their BOQ is a fixed contract. In
-                reality, it is often a work of fiction designed to look
-                professional while concealing massive inefficiencies.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Right Column: The Copy (Cards) */}
-          <div className="lg:col-span-8 space-y-8">
-            {problems.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-background border border-border/50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                {/* Subtle Red Warning Border on Left */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500/0 group-hover:bg-red-500 transition-colors duration-300 rounded-l-2xl" />
-
-                <div className="flex items-start gap-6">
-                  <div className="hidden sm:flex shrink-0 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30">
-                    {item.icon}
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-3">
-                      <span className="sm:hidden">{item.icon}</span>
-                      {item.title}
-                    </h3>
-                    <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
-                      {item.body}
-                    </p>
-                  </div>
+              {/* Main Content */}
+              <div className="space-y-6">
+                {/* Number + Title Row */}
+                <div className="flex items-baseline gap-4">
+                  <span className="font-black text-4xl md:text-5xl text-neon leading-none select-none">
+                    {item.number}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white">
+                    {item.title}
+                  </h3>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                {/* Hook */}
+                <p className="text-lg md:text-xl font-semibold text-neon leading-snug">
+                  {item.hook}
+                </p>
+
+                {/* Body bullets */}
+                <ul className="space-y-3">
+                  {item.body.map((line, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="shrink-0 mt-1">
+                        <XMark />
+                      </span>
+                      <span className="text-base md:text-lg text-zinc-300 leading-relaxed">
+                        {line}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Stat Callout */}
+              <div className="shrink-0 md:text-right border border-zinc-800 group-hover:border-neon/40 transition-colors duration-300 rounded-xl p-6 bg-zinc-900/50 min-w-[160px]">
+                <p className="text-3xl md:text-4xl font-black text-neon leading-none">
+                  {item.stat}
+                </p>
+                <p className="text-xs uppercase tracking-widest text-zinc-500 mt-2 font-medium">
+                  {item.statLabel}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Closing gut-punch */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-4 pt-12 border-t border-zinc-800 text-center"
+        >
+          <p className="text-xl md:text-2xl font-black uppercase text-white max-w-2xl mx-auto leading-tight">
+            This is not an accident.
+            <span className="text-neon"> It is a system. </span>
+            And it is designed to survive your silence.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
