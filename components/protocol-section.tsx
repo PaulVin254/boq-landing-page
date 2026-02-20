@@ -52,22 +52,22 @@ export default function ProtocolSection() {
               The Eris Forensic Protocol
             </h3>
             <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto">
-              We do not offer "friendly" construction management. We do not have
-              "relationships" with contractors.
+              We do not offer &quot;friendly&quot; construction management. We
+              do not have &quot;relationships&quot; with contractors.
               <br />
               <br />
               <strong className="text-white font-semibold block text-2xl">
                 Eris is a Forensic Intelligence Unit.
               </strong>
               <span className="block mt-4 text-base">
-                We perform a cold, clinical interrogation of your project’s
+                We perform a cold, clinical interrogation of your project&apos;s
                 data. Our protocol cross-references your Architectural
                 Blueprints and Structural Plans against your current BOQ to
-                expose the "Variance."
+                expose the &quot;Variance.&quot;
               </span>
               <span className="block mt-4 text-base">
-                We identify exactly where the "Phantom Materials" are hidden. We
-                expose:
+                We identify exactly where the &quot;Phantom Materials&quot; are
+                hidden. We expose:
               </span>
             </p>
           </motion.div>
@@ -107,19 +107,21 @@ export default function ProtocolSection() {
             >
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
                 The Elimination of the{" "}
-                <span className="text-red-400">"Consultancy Tax"</span>
+                <span className="text-red-400">
+                  &quot;Consultancy Tax&quot;
+                </span>
               </h3>
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
                   Most professional services in the Nairobi construction sector
-                  operate on a "Retainer Model"—a fundamentally flawed system
-                  where you are billed for time, not results.
+                  operate on a &quot;Retainer Model&quot;—a fundamentally flawed
+                  system where you are billed for time, not results.
                 </p>
                 <p>
                   This is effectively a Consultancy Tax; you pay for the
-                  auditor’s presence regardless of their efficacy. If they find
-                  nothing, you lose capital. If they find leakage but lack the
-                  courage to confront your contractor, you lose capital.
+                  auditor&apos;s presence regardless of their efficacy. If they
+                  find nothing, you lose capital. If they find leakage but lack
+                  the courage to confront your contractor, you lose capital.
                 </p>
               </div>
 
@@ -129,8 +131,8 @@ export default function ProtocolSection() {
                     The Eris Model
                   </h4>
                   <p className="text-sm text-slate-300">
-                    We do not bill for hours. We do not charge for "effort." We
-                    only invoice for Capital Recovery.
+                    We do not bill for hours. We do not charge for
+                    &quot;effort.&quot; We only invoice for Capital Recovery.
                   </p>
                 </div>
               </div>

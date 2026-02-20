@@ -298,10 +298,10 @@ export default function ComparisonSection() {
               ANALYSIS REPORT: ASSET REF // MUT-72-B
             </h3>
             <p className="text-slate-300 leading-relaxed">
-              Upon cross-referencing the Structural Engineer's Bending Schedules
-              against the Contractor's Phase 2 BOQ, the Eris Protocol identified
-              a catastrophic variance in the Y16 High-Yield Reinforcement
-              Tonnage.
+              Upon cross-referencing the Structural Engineer&apos;s Bending
+              Schedules against the Contractor&apos;s Phase 2 BOQ, the Eris
+              Protocol identified a catastrophic variance in the Y16 High-Yield
+              Reinforcement Tonnage.
             </p>
           </div>
 
@@ -372,19 +372,19 @@ export default function ComparisonSection() {
           className="mt-12 text-center"
         >
           <p className="text-xl md:text-2xl font-light text-slate-300 leading-relaxed max-w-4xl mx-auto">
-            "This{" "}
+            &quot;This{" "}
             <span className="font-bold text-red-400">
               KES 1.42M discrepancy
             </span>{" "}
             was hidden in plain sight on page 14 of a Muthaiga BOQ. We found{" "}
             <span className="font-bold text-red-400">
-              14 similar 'Phantom' variances
+              14 similar &apos;Phantom&apos; variances
             </span>{" "}
             on the subsequent 12 pages.{" "}
             <span className="italic text-red-400">
               How many are currently hidden in yours?
             </span>
-            "
+            &quot;
           </p>
         </motion.div>
       </div>
