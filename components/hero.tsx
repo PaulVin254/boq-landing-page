@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -53,25 +54,77 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Before/After Image Placeholder */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, type: "spring", bounce: 0 }}
-          className="w-full max-w-5xl mt-12 border rounded-xl bg-muted/50 aspect-video flex items-center justify-center text-muted-foreground relative overflow-hidden shadow-2xl"
-        >
-          {/* Replace this placeholder with your actual image:
-              <img src="/audit-report.png" alt="Before/After BOQ Audit Report" className="w-full h-full object-cover" /> */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900 text-slate-400 p-8 text-center border-2 border-dashed border-slate-300 dark:border-slate-700 m-4 rounded-lg">
-            <p className="font-semibold text-xl">
-              PLACEHOLDER: Before/After Audit Report Image
-            </p>
-            <p className="text-sm mt-2">
-              Show a side-by-side of &ldquo;Inflated BOQ&rdquo; vs
-              &ldquo;Audited BOQ&rdquo; with highlighted savings
-            </p>
-          </div>
-        </motion.div>
+        {/* Authority Evidence Visual Composition */}
+        <div className="w-full max-w-5xl mt-16 relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px] flex items-center justify-center">
+          {/* Image 1: The Foundation (Standard BOQ) */}
+          <motion.div
+            initial={{ y: 40, opacity: 0, rotate: 0 }}
+            animate={{ y: 0, opacity: 1, rotate: -3 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              type: "spring",
+              bounce: 0,
+            }}
+            className="absolute w-[85%] md:w-[75%] max-w-3xl left-1/2 -translate-x-1/2 top-0 md:top-4 z-10"
+          >
+            <div className="relative shadow-2xl rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+              <img
+                src="/audited-boq.png"
+                alt="Standard Contractor BOQ Submission"
+                className="w-full h-auto object-cover"
+              />
+              {/* Bottom Blur/Fade to blend into background */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+
+          {/* Image 2: The Audit (Floating Above) */}
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.7,
+              type: "spring",
+              bounce: 0.2,
+            }}
+            className="absolute w-[75%] md:w-[65%] max-w-2xl right-0 md:right-8 bottom-0 md:-bottom-8 z-20"
+          >
+            <div className="relative group">
+              {/* Subtle glow effect behind the focused image */}
+              <div className="absolute -inset-4 bg-red-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+              <img
+                src="/audited-boq-2.png"
+                alt="Eris Forensic Audit Report showing savings"
+                className="relative w-full h-auto rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-red-500/20 dark:border-red-500/30 transform transition-transform duration-500 group-hover:-translate-y-2"
+              />
+            </div>
+          </motion.div>
+
+          {/* Glassmorphism Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: -20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
+            className="absolute top-4 left-4 md:top-12 md:left-12 z-30 bg-white/70 dark:bg-black/50 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-2xl rounded-2xl p-3 md:p-4 flex items-center gap-3"
+          >
+            <div className="bg-green-500/20 p-2 rounded-full flex-shrink-0">
+              <Check
+                className="w-4 h-4 md:w-5 md:h-5 text-green-600 dark:text-green-400"
+                strokeWidth={3}
+              />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wider leading-none mb-1">
+                Verified Savings
+              </p>
+              <p className="text-sm md:text-lg font-bold text-slate-900 dark:text-white leading-none">
+                KES 6.2M Recovered
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <motion.div
