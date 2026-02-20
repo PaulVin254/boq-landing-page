@@ -14,8 +14,8 @@ export default function Home() {
     <main className="flex flex-col min-h-dvh">
       <Hero />
       <ProblemSection />
-      <ProtocolSection />
       <ComparisonSection />
+      <ProtocolSection />
       <Partners />
       <Testimonials />
       <Stats />
