@@ -376,8 +376,8 @@ export default function ComparisonSection() {
             <span className="text-lime-700 dark:text-[#CFFF04] bg-lime-100 dark:bg-[#CFFF04]/10 px-2 mx-1 rounded-sm">
               KES 1.42M DISCREPANCY
             </span>{" "}
-            WAS HIDDEN ON PAGE 14. WE FOUND 14 SIMILAR 'PHANTOM' VARIANCES ON
-            THE NEXT 12 PAGES.
+            WAS HIDDEN ON PAGE 14. WE FOUND 14 SIMILAR &apos;PHANTOM&apos;
+            VARIANCES ON THE NEXT 12 PAGES.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 text-white dark:text-[#CFFF04] font-mono text-sm md:text-base animate-pulse bg-zinc-900 dark:bg-black px-4 py-2 border border-zinc-800 dark:border-[#CFFF04]/30 rounded-full">
             <span className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full" />
