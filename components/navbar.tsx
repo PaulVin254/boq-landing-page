@@ -20,6 +20,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,14 +51,18 @@ export default function NavBar() {
           </div>
           <div className="flex sm:hidden">
             <Link href="/" className="flex items-center gap-2">
-              <img
+              <Image
                 src="/eris-engineering-logo.svg"
                 alt="Eris Engineering Logo"
+                width={32}
+                height={32}
                 className="h-8 w-auto dark:hidden block"
               />
-              <img
+              <Image
                 src="/eris-engineering-logo-dark.svg"
                 alt="Eris Engineering Logo"
+                width={32}
+                height={32}
                 className="h-8 w-auto hidden dark:block"
               />
               <span className="sr-only">Eris Engineering</span>
@@ -65,14 +70,18 @@ export default function NavBar() {
           </div>
           <div className="hidden sm:flex items-center space-x-8">
             <Link href="/" className="flex items-center gap-2">
-              <img
+              <Image
                 src="/eris-engineering-logo.svg"
                 alt="Eris Engineering Logo"
+                width={40}
+                height={40}
                 className="h-10 w-auto dark:hidden block"
               />
-              <img
+              <Image
                 src="/eris-engineering-logo-dark.svg"
                 alt="Eris Engineering Logo"
+                width={40}
+                height={40}
                 className="h-10 w-auto hidden dark:block"
               />
               <span className="sr-only">Eris Engineering</span>

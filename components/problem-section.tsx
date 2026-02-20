@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const problems = [
   {
     number: "01",
+    title: "The Phantom Margin",
     hook: "Your contractor is committing fraud. Right now.",
     body: [
       "You are paying for D16 high-tensile rebar. Walk onto your site and measure the reinforcement in your columns \u2014 you will find D12.",
@@ -15,6 +16,7 @@ const problems = [
   },
   {
     number: "02",
+    title: "The Silent Tax",
     hook: "They are counting on the fact that you will never check.",
     body: [
       "Contractors know you haven't mastered the bending schedule. They bank on you never cross-referencing a 200-page BOQ against your structural engineering specifications.",
@@ -25,6 +27,7 @@ const problems = [
   },
   {
     number: "03",
+    title: "Risk Exposure",
     hook: "Your status is being used as a weapon against you.",
     body: [
       "While you are presiding over a board meeting, your project team is treating your account like an open ATM.",
