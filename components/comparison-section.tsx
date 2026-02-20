@@ -4,11 +4,19 @@ import { motion } from "framer-motion";
 
 export default function ComparisonSection() {
   return (
-    <section className="w-full py-24 bg-slate-950 text-slate-100 relative overflow-hidden">
-      {/* Grid Background Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+    <section className="w-full py-24 bg-black text-white relative overflow-hidden font-sans">
+      {/* Subtle noise texture overlay (Matching ProblemSection) */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+        }}
+      />
+      {/* Grid Background Effect - Muted for texture */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,108 +25,91 @@ export default function ComparisonSection() {
           viewport={{ once: true }}
           className="text-center mb-16 space-y-4"
         >
-          <div className="inline-block px-4 py-1 bg-red-900/30 border border-red-800/50 rounded-full text-sm font-mono text-red-400 mb-4">
-            FORENSIC EVIDENCE
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Exhibit A vs. The Verdict
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#CFFF04]">
+            SEE THE DIFFERENCE WITH YOUR OWN EYES
+          </p>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight text-white mb-6">
+            THE EVIDENCE<br />
+            <span className="text-[#CFFF04]">DOES NOT LIE.</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed pt-4">
             The image on the left is what you signed. The data on the right is
             what you are actually being delivered.
           </p>
         </motion.div>
 
         {/* Before/After Comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* LEFT SIDE - The Deception */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-start">
+          {/* LEFT SIDE - THE TRAP (Contractor Submission) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-4 opacity-60 hover:opacity-100 transition-opacity duration-500 relative group"
           >
-            <div className="text-xs font-mono text-slate-500 uppercase tracking-wider">
-              EXHIBIT_A: CONTRACTOR_SUBMISSION
+            <div className="flex justify-between items-center bg-zinc-900 border border-zinc-800 p-3">
+                <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
+                EXHIBIT_A: CONTRACTOR_SUBMISSION
+                </div>
+                <div className="px-2 py-1 bg-black border border-zinc-700 text-[10px] uppercase tracking-widest text-zinc-500 font-mono">
+                    STATUS: PENDING
+                </div>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden shadow-2xl grayscale">
+            <div className="bg-zinc-900/50 border border-zinc-800 border-t-0 rounded-none overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative min-h-[300px]">
+                 {/* REJECTED Overlay on Hover */}
+                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                    <div className="border-4 border-zinc-700 text-zinc-700 font-black px-6 py-2 text-3xl uppercase tracking-widest transform -rotate-12 bg-black/80 backdrop-blur-sm">
+                        INFLATED
+                    </div>
+                 </div>
+
               {/* Mock BOQ Table */}
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-slate-800 border-b border-slate-700">
+              <div className="overflow-x-auto p-4">
+                <table className="w-full text-sm font-mono text-zinc-400 border-collapse">
+                  <thead className="bg-zinc-900 border-b border-zinc-800">
                     <tr>
-                      <th className="px-4 py-3 text-left font-mono text-slate-400">
+                      <th className="px-4 py-3 text-left uppercase tracking-wider text-zinc-600 text-[10px]">
                         Item
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-slate-400">
+                      <th className="px-4 py-3 text-left uppercase tracking-wider text-zinc-600 text-[10px]">
                         Description
                       </th>
-                      <th className="px-4 py-3 text-right font-mono text-slate-400">
+                      <th className="px-4 py-3 text-right uppercase tracking-wider text-zinc-600 text-[10px]">
                         Qty
                       </th>
-                      <th className="px-4 py-3 text-right font-mono text-slate-400">
+                      <th className="px-4 py-3 text-right uppercase tracking-wider text-zinc-600 text-[10px]">
                         Unit
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800">
+                  <tbody className="divide-y divide-zinc-800/50">
                     <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.1
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        Foundation Excavation
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        120
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                      <td className="px-4 py-3 text-zinc-600 border-r border-zinc-800/30">3.2.1</td>
+                      <td className="px-4 py-3 border-r border-zinc-800/30">Foundation Excavation</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-800/30">120</td>
+                      <td className="px-4 py-3 text-right text-zinc-600">m³</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.2
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        Blinding Concrete C15
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        8.5
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                      <td className="px-4 py-3 text-zinc-600 border-r border-zinc-800/30">3.2.2</td>
+                      <td className="px-4 py-3 border-r border-zinc-800/30">Blinding Concrete C15</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-800/30">8.5</td>
+                      <td className="px-4 py-3 text-right text-zinc-600">m³</td>
                     </tr>
-                    <tr className="bg-slate-850">
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.3
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        Y16 High-Yield Reinforcement
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono font-bold text-slate-200">
+                    <tr className="bg-zinc-800/30">
+                      <td className="px-4 py-3 text-zinc-600 border-r border-zinc-800/30">3.2.3</td>
+                      <td className="px-4 py-3 border-r border-zinc-800/30">Y16 High-Yield Reinforcement</td>
+                      <td className="px-4 py-3 text-right font-bold text-zinc-300 border-r border-zinc-800/30">
                         14,500
                       </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        kg
-                      </td>
+                      <td className="px-4 py-3 text-right text-zinc-600">kg</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.4
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        C25 Structural Concrete
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        65
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                      <td className="px-4 py-3 text-zinc-600 border-r border-zinc-800/30">3.2.4</td>
+                      <td className="px-4 py-3 border-r border-zinc-800/30">C25 Structural Concrete</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-800/30">65</td>
+                      <td className="px-4 py-3 text-right text-zinc-600">m³</td>
                     </tr>
                   </tbody>
                 </table>
@@ -126,142 +117,91 @@ export default function ComparisonSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE - The Truth */}
+          {/* RIGHT SIDE - THE REALITY (Eris Protocol) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-4 relative"
+            className="space-y-4 relative z-10"
           >
-            <div className="text-xs font-mono text-red-400 uppercase tracking-wider">
-              ERIS_PROTOCOL: AUDIT_COMPLETE
+             <div className="flex justify-between items-center bg-[#111] border border-[#CFFF04] border-b-0 p-3 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-[#CFFF04]/20 to-transparent skew-x-12 transform translate-x-4" />
+                <div className="text-xs font-mono text-[#CFFF04] uppercase tracking-wider flex items-center gap-2 relative z-10 font-bold">
+                 <div className="w-2 h-2 bg-[#CFFF04] rounded-full animate-pulse shadow-[0_0_10px_#CFFF04]" />
+                  ERIS_PROTOCOL: AUDIT_COMPLETE
+                </div>
             </div>
 
-            <div className="bg-slate-900 border-2 border-red-900/50 rounded-lg overflow-hidden shadow-2xl shadow-red-900/20 relative">
+            <div className="bg-[#050505] border-2 border-[#CFFF04] rounded-none overflow-hidden shadow-[0_0_50px_rgba(207,255,4,0.1)] relative min-h-[300px]">
+                {/* Neon Corner Accents */}
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#CFFF04] z-20" />
+                <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#CFFF04] z-20" />
+                <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#CFFF04] z-20" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#CFFF04] z-20" />
+
               {/* Mock BOQ Table with Annotations */}
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-slate-800 border-b border-slate-700">
+              <div className="overflow-x-auto p-4">
+                <table className="w-full text-sm font-mono text-zinc-300 border-separate border-spacing-0">
+                  <thead className="bg-[#CFFF04]/5">
                     <tr>
-                      <th className="px-4 py-3 text-left font-mono text-slate-400">
+                      <th className="px-4 py-3 text-left uppercase tracking-wider text-[#CFFF04] text-[10px] border-b border-[#CFFF04]/20">
                         Item
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-slate-400">
+                      <th className="px-4 py-3 text-left uppercase tracking-wider text-[#CFFF04] text-[10px] border-b border-[#CFFF04]/20">
                         Description
                       </th>
-                      <th className="px-4 py-3 text-right font-mono text-slate-400">
+                      <th className="px-4 py-3 text-right uppercase tracking-wider text-[#CFFF04] text-[10px] border-b border-[#CFFF04]/20">
                         Qty
                       </th>
-                      <th className="px-4 py-3 text-right font-mono text-slate-400">
+                      <th className="px-4 py-3 text-right uppercase tracking-wider text-[#CFFF04] text-[10px] border-b border-[#CFFF04]/20">
                         Unit
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800">
-                    <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.1
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        Foundation Excavation
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        120
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                  <tbody className="divide-y divide-zinc-800">
+                    <tr className="hover:bg-zinc-900/50 transition-colors">
+                      <td className="px-4 py-3 text-zinc-500 border-r border-zinc-900">3.2.1</td>
+                      <td className="px-4 py-3 border-r border-zinc-900">Foundation Excavation</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-900">120</td>
+                      <td className="px-4 py-3 text-right text-zinc-500">m³</td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.2
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        Blinding Concrete C15
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        8.5
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                    <tr className="hover:bg-zinc-900/50 transition-colors">
+                      <td className="px-4 py-3 text-zinc-500 border-r border-zinc-900">3.2.2</td>
+                      <td className="px-4 py-3 border-r border-zinc-900">Blinding Concrete C15</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-900">8.5</td>
+                      <td className="px-4 py-3 text-right text-zinc-500">m³</td>
                     </tr>
-                    <tr className="bg-red-950/20 relative">
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.3
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
+                    <tr className="bg-[#CFFF04]/10 relative group-row">
+                      <td className="px-4 py-4 text-[#CFFF04] border-r border-[#CFFF04]/20 font-bold border-l-4 border-l-[#CFFF04]">3.2.3</td>
+                      <td className="px-4 py-4 text-white font-bold border-r border-[#CFFF04]/20">
                         Y16 High-Yield Reinforcement
                       </td>
-                      <td className="px-4 py-3 text-right font-mono font-bold text-red-400 relative">
-                        {/* Mobile Highlight: Simple box */}
-                        <span className="relative z-10 md:hidden bg-red-900/50 px-1 rounded ring-1 ring-red-500">
-                          14,500
-                        </span>
-
-                        {/* Desktop Highlight: Red Circle SVG */}
-                        <div className="hidden md:block absolute -inset-2 z-0">
-                          <svg
-                            className="w-full h-full"
-                            viewBox="0 0 100 40"
-                            preserveAspectRatio="none"
-                          >
-                            <ellipse
-                              cx="50"
-                              cy="20"
-                              rx="45"
-                              ry="15"
-                              fill="none"
-                              stroke="#DC2626"
-                              strokeWidth="3"
-                            />
-                          </svg>
-                        </div>
-                        <span className="relative z-10 hidden md:inline">
-                          14,500
-                        </span>
+                      <td className="px-4 py-4 text-right font-black text-[#CFFF04] text-lg md:text-xl relative border-r border-[#CFFF04]/20">
+                         {/* Glowing Text Shadow */}
+                         <div className="flex flex-col items-end gap-1">
+                             <span className="text-xs text-zinc-500 line-through decoration-red-500 decoration-2 opacity-60">14,500</span>
+                             <span className="relative drop-shadow-[0_0_8px_rgba(207,255,4,0.5)]">
+                                9,820
+                             </span>
+                         </div>
                       </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        kg
-                      </td>
+                      <td className="px-4 py-4 text-right text-zinc-500">kg</td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-mono text-slate-300">
-                        3.2.4
-                      </td>
-                      <td className="px-4 py-3 text-slate-300">
-                        C25 Structural Concrete
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-300">
-                        65
-                      </td>
-                      <td className="px-4 py-3 text-right font-mono text-slate-400">
-                        m³
-                      </td>
+                    <tr className="hover:bg-zinc-900/50 transition-colors">
+                      <td className="px-4 py-3 text-zinc-500 border-r border-zinc-900">3.2.4</td>
+                      <td className="px-4 py-3 border-r border-zinc-900">C25 Structural Concrete</td>
+                      <td className="px-4 py-3 text-right border-r border-zinc-900">65</td>
+                      <td className="px-4 py-3 text-right text-zinc-500">m³</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              {/* Floating Annotation */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="absolute top-1/2 -right-2 transform translate-x-full -translate-y-1/2 hidden xl:block"
-              >
-                <div className="bg-red-900 border-2 border-red-600 rounded px-3 py-2 text-xs font-mono text-red-100 whitespace-nowrap shadow-lg">
-                  Physical Max Capacity: 9,820kg
-                  <div className="absolute left-0 top-1/2 w-8 h-0.5 bg-red-600 -translate-x-full" />
-                </div>
-              </motion.div>
-
-              {/* Stamp - Animated */}
-              <motion.div
+               {/* Stamp - Animated */}
+               <motion.div
                 initial={{ opacity: 0, scale: 0, rotate: 0 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -12 }}
                 transition={{
                   duration: 0.5,
                   delay: 0.6,
@@ -269,98 +209,95 @@ export default function ComparisonSection() {
                   stiffness: 200,
                 }}
                 viewport={{ once: true }}
-                className="absolute bottom-4 right-4"
+                className="absolute bottom-8 right-8 z-30 pointer-events-none"
               >
-                <div className="border-4 border-red-600 text-red-600 font-bold px-4 py-2 text-sm font-mono transform -rotate-10 bg-slate-900/50 backdrop-blur-sm">
-                  DISCREPANCY DETECTED
+                <div className="border-[4px] border-[#CFFF04] text-[#CFFF04] font-black px-4 py-2 text-xl md:text-2xl font-mono transform bg-black/80 backdrop-blur-sm shadow-[0_0_30px_rgba(207,255,4,0.3)] tracking-widest uppercase flex flex-col items-center leading-none gap-1">
+                  <span>VERIFIED</span>
+                  <span className="text-sm tracking-[0.5em] font-bold">FRAUD</span>
                 </div>
               </motion.div>
-            </div>
-
-            {/* Mobile Annotation */}
-            <div className="xl:hidden bg-red-900/20 border border-red-800/50 rounded px-4 py-2 text-xs font-mono text-red-400">
-              → Physical Max Capacity: 9,820kg
             </div>
           </motion.div>
         </div>
 
-        {/* Forensic Report */}
+        {/* Forensic Report / Savings Dashboard */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-slate-900 border border-slate-800 rounded-xl p-8 md:p-12 space-y-8"
+          className="bg-zinc-900/20 border border-zinc-800 rounded-none relative overflow-hidden group"
         >
-          {/* Report Header */}
-          <div className="border-l-4 border-red-600 pl-6">
-            <h3 className="text-sm font-mono text-slate-500 uppercase tracking-widest mb-2">
-              ANALYSIS REPORT: ASSET REF // MUT-72-B
-            </h3>
-            <p className="text-slate-300 leading-relaxed">
-              Upon cross-referencing the Structural Engineer&apos;s Bending
-              Schedules against the Contractor&apos;s Phase 2 BOQ, the Eris
-              Protocol identified a catastrophic variance in the Y16 High-Yield
-              Reinforcement Tonnage.
-            </p>
-          </div>
+             {/* Neon Top Line */}
+             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#CFFF04] to-transparent opacity-50" />
+             
+             <div className="p-6 md:p-10 space-y-8 relative z-10">
+                {/* Report Header */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 px-4 md:px-0">
+                    <div className="border-l-4 border-[#CFFF04] pl-6">
+                        <h3 className="text-sm font-mono text-[#CFFF04] uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#CFFF04] rounded-full animate-pulse" />
+                        AUDIT INTELLIGENCE REPORT // MUT-72-B
+                        </h3>
+                        <p className="text-zinc-400 leading-relaxed font-mono text-sm max-w-2xl">
+                        Cross-reference of Structural Bending Schedules vs. Contractor Phase 2 BOQ identifies critical variance in Y16 High-Yield Reinforcement.
+                        </p>
+                    </div>
+                </div>
 
-          {/* Statistical Breakdown */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 space-y-2">
-              <div className="text-xs font-mono text-slate-500 uppercase">
-                Contractor Claim
-              </div>
-              <div className="text-2xl font-bold font-mono text-slate-200">
-                14,500 kg
-              </div>
-            </div>
+                {/* Statistical Breakdown Dashboard */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-0 border border-zinc-800 divide-y md:divide-y-0 md:divide-x divide-zinc-800 bg-black/40">
+                    <div className="p-6 flex flex-col justify-center">
+                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">
+                            Contractor Claim
+                        </div>
+                        <div className="text-xl md:text-2xl font-black font-mono text-zinc-600 line-through decoration-red-500/50 decoration-2">
+                            14,500 kg
+                        </div>
+                    </div>
 
-            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 space-y-2">
-              <div className="text-xs font-mono text-slate-500 uppercase">
-                Actual Capacity
-              </div>
-              <div className="text-2xl font-bold font-mono text-slate-200">
-                9,820 kg
-              </div>
-            </div>
+                    <div className="p-6 flex flex-col justify-center">
+                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">
+                            True Capacity
+                        </div>
+                        <div className="text-xl md:text-2xl font-black font-mono text-white">
+                            9,820 kg
+                        </div>
+                    </div>
 
-            <div className="bg-gradient-to-br from-red-950 to-slate-950 border-2 border-red-900 rounded-lg p-6 space-y-2">
-              <div className="text-xs font-mono text-red-400 uppercase">
-                Phantom Variance
-              </div>
-              <div className="text-2xl font-bold font-mono text-red-500">
-                4,680 kg
-              </div>
-            </div>
+                    <div className="p-6 bg-[#CFFF04]/5 relative overflow-hidden group/item flex flex-col justify-center">
+                        <div className="absolute inset-0 bg-[#CFFF04]/10 translate-y-full group-hover/item:translate-y-0 transition-transform duration-300" />
+                        <div className="relative z-10">
+                             <div className="text-[10px] font-mono text-[#CFFF04] uppercase tracking-widest mb-2">
+                                Phantom Variance
+                            </div>
+                            <div className="text-xl md:text-2xl font-black font-mono text-[#CFFF04]">
+                                4,680 kg
+                            </div>
+                        </div>
+                    </div>
 
-            <div className="bg-gradient-to-br from-red-950 to-slate-950 border-2 border-red-900 rounded-lg p-6 space-y-2">
-              <div className="text-xs font-mono text-red-400 uppercase">
-                Financial Leakage
-              </div>
-              <div className="text-2xl font-bold font-mono text-red-500">
-                KES 1.42M
-              </div>
-            </div>
-          </div>
+                    <div className="p-6 bg-[#CFFF04] relative overflow-hidden flex flex-col justify-center group/leakage cursor-default">
+                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/leakage:translate-y-0 transition-transform duration-500 ease-out" />
+                        <div className="relative z-10">
+                            <div className="text-[10px] font-mono text-black uppercase tracking-widest mb-1 font-bold">
+                                Financial Leakage
+                            </div>
+                            <div className="text-2xl md:text-3xl font-black font-mono text-black tracking-tighter">
+                                KES 1.42M
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-          {/* Verdict */}
-          <div className="bg-slate-950/50 border border-slate-800 rounded-lg p-6">
-            <p className="text-slate-300 leading-relaxed mb-4">
-              This is not a mathematical oversight. This is a{" "}
-              <span className="font-bold text-red-400">
-                physical impossibility
-              </span>
-              . At current market rates, this single discrepancy represents a
-              KES 1,420,800 leakage on a single page of documentation.
-            </p>
-            <p className="text-slate-400 text-sm">
-              Our audit found that the contractor intentionally over-specified
-              reinforcement density in the BOQ, banking on the fact that no
-              asset owner would manually recalculate the tonnage from the
-              structural blueprints.
-            </p>
-          </div>
+                {/* Verdict Text */}
+                <div className="pt-2 px-2 md:px-0">
+                    <p className="text-zinc-500 text-xs font-mono uppercase tracking-wide">
+                        <span className="text-[#CFFF04] font-bold mr-2">VERDICT:</span> 
+                        This is not a rounding error. It is a mathematical impossibility. A KES 1,420,000 leakage on a single page of documentation.
+                    </p>
+                </div>
+             </div>
         </motion.div>
 
         {/* Closing Hook */}
@@ -369,23 +306,16 @@ export default function ComparisonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-20 text-center"
         >
-          <p className="text-xl md:text-2xl font-light text-slate-300 leading-relaxed max-w-4xl mx-auto">
-            &quot;This{" "}
-            <span className="font-bold text-red-400">
-              KES 1.42M discrepancy
-            </span>{" "}
-            was hidden in plain sight on page 14 of a Muthaiga BOQ. We found{" "}
-            <span className="font-bold text-red-400">
-              14 similar &apos;Phantom&apos; variances
-            </span>{" "}
-            on the subsequent 12 pages.{" "}
-            <span className="italic text-red-400">
-              How many are currently hidden in yours?
-            </span>
-            &quot;
+          <p className="text-xl md:text-3xl font-black uppercase text-white leading-tight max-w-4xl mx-auto">
+            THIS <span className="text-[#CFFF04] bg-[#CFFF04]/10 px-2 mx-1 rounded-sm">KES 1.42M DISCREPANCY</span> WAS HIDDEN ON PAGE 14.
+            WE FOUND 14 SIMILAR 'PHANTOM' VARIANCES ON THE NEXT 12 PAGES.
           </p>
+          <div className="mt-6 inline-flex items-center gap-2 text-[#CFFF04] font-mono text-sm md:text-base animate-pulse bg-black px-4 py-2 border border-[#CFFF04]/30 rounded-full">
+            <span className="w-2 h-2 bg-[#CFFF04] rounded-full" />
+            HOW MANY ARE CURRENTLY HIDDEN IN YOURS?
+          </div>
         </motion.div>
       </div>
     </section>
