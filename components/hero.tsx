@@ -71,7 +71,10 @@ export default function Hero() {
             <div className="relative shadow-2xl rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
               <img
                 src="/audited-boq.png"
-                alt="Standard Contractor BOQ Submission"
+                alt="Standard Contractor BOQ Submission showing unverified quantities"
+                width={800}
+                height={600}
+                fetchPriority="high"
                 className="w-full h-auto object-cover"
               />
               {/* Bottom Blur/Fade to blend into background */}
@@ -96,7 +99,10 @@ export default function Hero() {
               <div className="absolute -inset-4 bg-red-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
               <img
                 src="/audited-boq-2.png"
-                alt="Eris Forensic Audit Report showing savings"
+                alt="Eris Forensic Audit Report showing KES 6.28M in savings"
+                width={700}
+                height={500}
+                fetchPriority="high"
                 className="relative w-full h-auto rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-red-500/20 dark:border-red-500/30 transform transition-transform duration-500 group-hover:-translate-y-2"
               />
             </div>

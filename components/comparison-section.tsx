@@ -52,9 +52,9 @@ export default function ComparisonSection() {
             className="space-y-4 opacity-70 hover:opacity-100 transition-opacity duration-500 relative group"
           >
             <div className="flex justify-between items-center bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-3">
-              <div className="text-xs font-mono text-zinc-600 dark:text-zinc-500 uppercase tracking-wider">
+              <h3 className="text-xs font-mono text-zinc-600 dark:text-zinc-500 uppercase tracking-wider m-0">
                 EXHIBIT_A: CONTRACTOR_SUBMISSION
-              </div>
+              </h3>
               <div className="px-2 py-1 bg-white dark:bg-black border border-zinc-300 dark:border-zinc-700 text-[10px] uppercase tracking-widest text-zinc-500 font-mono">
                 STATUS: PENDING
               </div>
@@ -160,10 +160,10 @@ export default function ComparisonSection() {
           >
             <div className="flex justify-between items-center bg-zinc-950 dark:bg-[#111] border border-lime-500 dark:border-[#CFFF04] border-b-0 p-3 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-lime-500/30 dark:from-[#CFFF04]/20 to-transparent skew-x-12 transform translate-x-4" />
-              <div className="text-xs font-mono text-lime-400 dark:text-[#CFFF04] uppercase tracking-wider flex items-center gap-2 relative z-10 font-bold">
+              <h3 className="text-xs font-mono text-lime-400 dark:text-[#CFFF04] uppercase tracking-wider flex items-center gap-2 relative z-10 font-bold m-0">
                 <div className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full animate-pulse shadow-[0_0_10px_#84cc16] dark:shadow-[0_0_10px_#CFFF04]" />
                 ERIS_PROTOCOL: AUDIT_COMPLETE
-              </div>
+              </h3>
             </div>
 
             <div className="bg-white dark:bg-[#050505] border-2 border-lime-600 dark:border-[#CFFF04] rounded-none overflow-hidden shadow-[0_0_50px_rgba(132,204,22,0.15)] dark:shadow-[0_0_50px_rgba(207,255,4,0.1)] relative min-h-[300px]">
@@ -379,10 +379,14 @@ export default function ComparisonSection() {
             WAS HIDDEN ON PAGE 14. WE FOUND 14 SIMILAR &apos;PHANTOM&apos;
             VARIANCES ON THE NEXT 12 PAGES.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 text-white dark:text-[#CFFF04] font-mono text-sm md:text-base animate-pulse bg-zinc-900 dark:bg-black px-4 py-2 border border-zinc-800 dark:border-[#CFFF04]/30 rounded-full">
+          <a
+            href="#pricing"
+            className="mt-6 inline-flex items-center gap-2 text-white dark:text-[#CFFF04] font-mono text-sm md:text-base animate-pulse bg-zinc-900 dark:bg-black px-4 py-2 border border-zinc-800 dark:border-[#CFFF04]/30 rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-900 transition-colors"
+            aria-label="See how many hidden costs are in your BOQ"
+          >
             <span className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full" />
             HOW MANY ARE CURRENTLY HIDDEN IN YOURS?
-          </div>
+          </a>
         </motion.div>
       </div>
     </section>
