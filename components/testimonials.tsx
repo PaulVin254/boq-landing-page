@@ -4,83 +4,83 @@ import { motion } from "framer-motion";
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "CEO at TechStart",
+      name: "David Kamau",
+      role: "Private Developer, Karen",
       avatar: "https://i.pravatar.cc/150?img=1",
       content:
-        "This platform has transformed how we manage our business. The analytics features alone have saved us countless hours and improved our decision-making process significantly.",
+        "I thought my PM was honest until Eris ran the numbers. They found 12 tons of phantom steel and KES 4.2M in inflated concrete rates before we even poured the foundation. The 20% bounty model is a no-brainer.",
       rating: 5,
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Product Manager at Scale Co",
+      name: "Rajesh Patel",
+      role: "Director, Commercial Real Estate",
       avatar: "https://i.pravatar.cc/150?img=3",
       content:
-        "The integration capabilities are outstanding. We were able to connect all our existing tools seamlessly. The customer support team is also incredibly responsive and helpful.",
+        "We were about to sign a KES 120M contract. Eris stepped in, cross-examined the structural drawings against the BOQ, and instantly shaved off KES 8.5M in 'contingency fat'. Absolutely ruthless efficiency.",
       rating: 5,
     },
     {
-      name: "Emma Thompson",
-      role: "CTO at DataFlow",
+      name: "Grace Wanjiku",
+      role: "Lead Investor, Kilimani Projects",
       avatar: "https://i.pravatar.cc/150?img=5",
       content:
-        "Security was our main concern when choosing a platform, and this solution exceeded our expectations. The encryption and compliance features give us complete peace of mind.",
+        "The traditional consultants are a tax on your balance sheet. Eris operates like mercenaries. They only eat what they kill. They recovered KES 3.1M on our last apartment block.",
       rating: 5,
     },
     {
-      name: "Robert Taylor",
-      role: "CTO at FinanceFlow",
+      name: "Hassan Omondi",
+      role: "Managing Partner, Westlands",
       avatar: "https://i.pravatar.cc/150?img=15",
       content:
-        "Security and compliance are critical in our industry. This platform not only meets but exceeds all our regulatory requirements.",
+        "Their volumetric squeeze is terrifyingly accurate. They caught a KES 1.8M discrepancy in excavation depths that our own quantity surveyor missed. I don't build without them now.",
       rating: 5,
     },
     {
-      name: "Maria Garcia",
-      role: "Director of Operations at StreamlineOps",
+      name: "Sarah Njoroge",
+      role: "Property Owner, Runda",
       avatar: "https://i.pravatar.cc/150?img=17",
       content:
-        "The customer support is phenomenal. Every question gets answered quickly and thoroughly. It's like having an extended team member.",
+        "I was skeptical at first, but the KES 500k guarantee removed all risk. Within 48 hours, they handed me a forensic report showing KES 2.4M in over-specs. Best ROI on any project.",
       rating: 5,
     },
     {
-      name: "Kevin Lee",
-      role: "Founder at NextGen Solutions",
+      name: "Kevin Mutua",
+      role: "Director, Mutua Holdings",
       avatar: "https://i.pravatar.cc/150?img=19",
       content:
-        "We've tried many platforms, but this one stands out for its reliability and performance. Zero downtime in 18 months of usage.",
+        "Contractors hate them. Developers need them. They stripped away the 'Mkubwa Tax' on our warehouse build and saved us exactly KES 5.2M. The math doesn't lie.",
       rating: 5,
     },
     {
-      name: "Sophie Anderson",
-      role: "Product Lead at InnovateLab",
+      name: "Amina Mohamed",
+      role: "Real Estate Syndicate Lead",
       avatar: "https://i.pravatar.cc/150?img=21",
       content:
-        "The analytics dashboard gives us insights we never had before. Data-driven decisions have become our competitive advantage.",
+        "We used to accept a 10-15% variance as 'the cost of doing business in Nairobi'. Eris proved that was a lie. They recovered KES 6M on our last commercial plaza.",
       rating: 5,
     },
     {
-      name: "James Wilson",
-      role: "Engineering Manager at TechBridge",
+      name: "James Kariuki",
+      role: "Private Investor, Lavington",
       avatar: "https://i.pravatar.cc/150?img=23",
       content:
-        "Migration was seamless and the onboarding process was exceptional. Our team was productive from day one.",
+        "The blueprint cross-examination is brilliant. They found out we were being billed for Y16 reinforcement when the structural engineer only called for Y12. Saved us millions.",
       rating: 5,
     },
     {
-      name: "Elena Petrov",
-      role: "CEO at GrowthMetrics",
+      name: "Elena Wambui",
+      role: "CEO, Apex Developments",
       avatar: "https://i.pravatar.cc/150?img=25",
       content:
-        "The platform scales beautifully with our business. From startup to enterprise, it has grown with us every step of the way.",
+        "You aren't buying an audit; you are buying financial security. They stress-tested our unit rates against the actual market and killed a 25% hidden markup instantly.",
       rating: 5,
     },
     {
-      name: "Michael Chang",
-      role: "Head of Product at DataDriven",
+      name: "Michael Ochieng",
+      role: "Head of Projects, Kileleshwa",
       avatar: "https://i.pravatar.cc/150?img=27",
       content:
-        "Real-time collaboration features have transformed how our remote team works together. Productivity has increased dramatically.",
+        "Zero upfront fees. They found KES 4.8M in leakage, took their 20% bounty, and we kept the rest. It is the most aligned incentive structure in the Kenyan construction industry.",
       rating: 5,
     },
   ];
@@ -96,8 +96,16 @@ export default function Testimonials() {
   );
 
   return (
-    <section id="testimonials" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="testimonials"
+      className="py-24 px-4 bg-black relative overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#CFFF04]/0 via-[#CFFF04]/20 to-[#CFFF04]/0 blur-3xl rounded-full" />
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -105,11 +113,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-20 flex flex-col gap-3"
         >
-          <h2 className="text-xl font-semibold sm:text-2xl bg-linear-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-            Loved by Teams Worldwide
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6 text-white uppercase">
+            MILLIONS RECOVERED FOR{" "}
+            <span className="text-[#CFFF04]">KENYAN DEVELOPERS.</span>
           </h2>
-          <p className="mx-auto max-w-xl text-muted-foreground text-center">
-            Join thousands of companies that trust our platform.
+          <p className="mx-auto max-w-xl text-xl text-zinc-400 font-medium text-center">
+            Don't take our word for it. Listen to the developers who stopped
+            bleeding cash and started building with certainty.
           </p>
         </motion.div>
 
@@ -127,29 +137,29 @@ export default function Testimonials() {
               }}
               className="break-inside-avoid mb-8"
             >
-              <div className="p-6 rounded-xl bg-card border border-border transition-colors duration-300">
+              <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-[#CFFF04]/50 transition-colors duration-300">
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <StarIcon key={i} />
                   ))}
                 </div>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
+                <p className="text-zinc-300 mb-6 leading-relaxed text-sm font-medium">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-linear-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center text-sm font-medium border border-primary/20">
+                  <div className="w-10 h-10 bg-[#CFFF04]/10 rounded-full flex items-center justify-center text-sm font-bold text-[#CFFF04] border border-[#CFFF04]/20">
                     {testimonial.name
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm">
+                    <h4 className="font-bold text-white text-sm">
                       {testimonial.name}
                     </h4>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-[#CFFF04] font-medium">
                       {testimonial.role}
                     </p>
                   </div>
