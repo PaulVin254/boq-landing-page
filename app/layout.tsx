@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Eris Engineering",
     images: [
       {
-        url: "/og-image.svg", // Ensure this image exists in /public
+        url: "/og-image.png", // Ensure this image exists in /public
         width: 1200,
         height: 630,
         alt: "Eris Engineering BOQ Audit Report",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Expert BOQ Audit & Construction Cost Consultants | Nairobi",
     description:
       "Stop getting overcharged on construction projects. Get a forensic BOQ audit to uncover hidden costs.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -69,7 +69,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "Eris Engineering",
-  image: "https://audit.eris.co.ke/og-image.svg",
+  image: "https://audit.eris.co.ke/og-image.png",
   description:
     "Expert BOQ audits and construction cost consulting in Nairobi, Kenya. Specializing in high-value projects in Karen, Runda, and Muthaiga.",
   "@id": "https://audit.eris.co.ke",
