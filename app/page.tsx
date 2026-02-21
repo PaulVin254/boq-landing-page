@@ -9,6 +9,7 @@ import Stats from "@/components/stats";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
 import Faq from "@/components/faq";
+import FinalCtaSection from "@/components/final-cta-section";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <Stats />
       <Pricing />
       <Faq />
+      <FinalCtaSection />
       <Footer />
     </main>
   );
