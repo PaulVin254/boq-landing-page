@@ -1,194 +1,133 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Crosshair1Icon,
-  DimensionsIcon,
-  BarChartIcon,
-  CrossCircledIcon,
-  CheckCircledIcon,
-} from "@radix-ui/react-icons";
+import { Crosshair, Activity, Ruler } from "lucide-react";
 
 export default function ProtocolSection() {
-  const protocolFeatures = [
+  const steps = [
     {
-      title: "Structural Over-reinforcement",
-      description:
-        "Padded steel tonnages that exceed engineering safety margins.",
-      icon: <Crosshair1Icon className="w-8 h-8 text-sky-400" />,
+      num: "01",
+      title: "THE BLUEPRINT CROSS-EXAMINATION",
+      desc: "We don't trust the spreadsheet. We interrogate the source. We cross-reference every single line item in the BOQ against the actual structural drawings. If the blueprint calls for 10,000kg of steel and the BOQ bills you for 14,500kg, we flag the phantom materials. No ghost quantities survive this phase.",
+      icon: (
+        <Crosshair className="w-8 h-8 md:w-12 md:h-12 text-lime-500 dark:text-[#CFFF04]" />
+      ),
     },
     {
-      title: "Volumetric Padding",
-      description:
-        "Billing for concrete volumes that exceed the physical dimensions of the slab.",
-      icon: <DimensionsIcon className="w-8 h-8 text-sky-400" />,
+      num: "02",
+      title: "THE RATE STRESS-TEST",
+      desc: "Contractors love to bury their profit margins in inflated unit rates. We strip away the 'Mkubwa Tax.' We stress-test every single material and labor rate against current, ruthless market realities. If they are charging you KES 150 for a KES 90 item, we kill the markup instantly.",
+      icon: (
+        <Activity className="w-8 h-8 md:w-12 md:h-12 text-lime-500 dark:text-[#CFFF04]" />
+      ),
     },
     {
-      title: "Rate Spikes",
-      description:
-        'Market-variance "errors" that hide a 20% markup in plain sight.',
-      icon: <BarChartIcon className="w-8 h-8 text-sky-400" />,
+      num: "03",
+      title: "THE VOLUMETRIC SQUEEZE",
+      desc: "This is where the real money hides. We recalculate concrete volumes, excavation depths, and steel tonnage down to the exact engineering margins. We allow zero 'fat' for contractor convenience. You pay for exactly what the structure requires to stand. Not a shilling more.",
+      icon: (
+        <Ruler className="w-8 h-8 md:w-12 md:h-12 text-lime-500 dark:text-[#CFFF04]" />
+      ),
     },
   ];
 
   return (
-    <section className="py-24 bg-slate-950 text-slate-50 relative overflow-hidden">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
+    <section className="w-full py-24 md:py-32 bg-zinc-950 dark:bg-black text-white relative overflow-hidden font-sans">
+      {/* Subtle noise texture overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen dark:mix-blend-normal"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+        }}
+      />
+      {/* Grid Background Effect */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
 
-      <div className="container px-4 md:px-6 mx-auto relative z-10">
-        {/* PART 1: The Protocol */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-sm font-mono text-sky-400 uppercase tracking-widest mb-4">
-              Introducing
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-              The Eris Forensic Protocol
-            </h3>
-            <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto">
-              We do not offer &quot;friendly&quot; construction management. We
-              do not have &quot;relationships&quot; with contractors.
-              <br />
-              <br />
-              <strong className="text-white font-semibold block text-2xl">
-                Eris is a Forensic Intelligence Unit.
-              </strong>
-              <span className="block mt-4 text-base">
-                We perform a cold, clinical interrogation of your project&apos;s
-                data. Our protocol cross-references your Architectural
-                Blueprints and Structural Plans against your current BOQ to
-                expose the &quot;Variance.&quot;
-              </span>
-              <span className="block mt-4 text-base">
-                We identify exactly where the &quot;Phantom Materials&quot; are
-                hidden. We expose:
-              </span>
+      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-20 space-y-6"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-[2px] w-12 bg-lime-600 dark:bg-[#CFFF04]" />
+            <p className="text-sm font-mono font-bold uppercase tracking-[0.25em] text-lime-600 dark:text-[#CFFF04]">
+              THE UNIQUE MECHANISM
             </p>
-          </motion.div>
-        </div>
+          </div>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tighter text-white">
+            THE ERIS FORENSIC
+            <br />
+            <span className="text-zinc-500">PROTOCOL.</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl leading-relaxed pt-4 font-medium">
+            We don&apos;t skim your documents. We put them under a microscope.
+            Here is exactly how we extract your stolen capital.
+          </p>
+        </motion.div>
 
-        {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
-          {protocolFeatures.map((feature, index) => (
+        {/* The Dossier / Target List */}
+        <div className="space-y-8 md:space-y-12">
+          {steps.map((step, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-slate-900/50 border border-slate-800 p-8 rounded-xl hover:border-sky-500/50 transition-colors duration-300 group"
-            >
-              <div className="bg-sky-500/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky-500/20 transition-colors">
-                {feature.icon}
-              </div>
-              <h4 className="text-xl font-semibold mb-3 text-white">
-                {feature.title}
-              </h4>
-              <p className="text-slate-400">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* PART 2: The Consultancy Tax */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-800 shadow-2xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Side */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              key={step.num}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              className="relative group"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                The Elimination of the{" "}
-                <span className="text-red-400">
-                  &quot;Consultancy Tax&quot;
-                </span>
-              </h3>
-              <div className="space-y-4 text-slate-400 leading-relaxed">
-                <p>
-                  Most professional services in the Nairobi construction sector
-                  operate on a &quot;Retainer Model&quot;—a fundamentally flawed
-                  system where you are billed for time, not results.
-                </p>
-                <p>
-                  This is effectively a Consultancy Tax; you pay for the
-                  auditor&apos;s presence regardless of their efficacy. If they
-                  find nothing, you lose capital. If they find leakage but lack
-                  the courage to confront your contractor, you lose capital.
-                </p>
+              {/* Massive Background Number */}
+              <div className="absolute -top-10 md:-top-16 -left-4 md:-left-8 text-[120px] md:text-[180px] font-black text-zinc-900/50 dark:text-zinc-900/30 select-none pointer-events-none z-0 transition-colors duration-500 group-hover:text-lime-900/20 dark:group-hover:text-[#CFFF04]/10">
+                {step.num}
               </div>
 
-              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 p-5 bg-sky-950/30 border-l-4 border-sky-500 rounded-r-lg">
-                <div className="flex-1">
-                  <h4 className="font-semibold text-sky-400 mb-1">
-                    The Eris Model
-                  </h4>
-                  <p className="text-sm text-slate-300">
-                    We do not bill for hours. We do not charge for
-                    &quot;effort.&quot; We only invoice for Capital Recovery.
+              {/* Content Block */}
+              <div className="relative z-10 bg-zinc-900/80 dark:bg-[#0a0a0a]/80 backdrop-blur-sm border border-zinc-800 dark:border-zinc-800/50 p-8 md:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-start transition-all duration-500 hover:border-lime-600/50 dark:hover:border-[#CFFF04]/50 hover:bg-zinc-900 dark:hover:bg-[#0f0f0f]">
+                {/* Icon Container */}
+                <div className="shrink-0 p-4 bg-black border border-zinc-800 dark:border-zinc-800/50 shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-lime-600/30 dark:group-hover:border-[#CFFF04]/30 group-hover:shadow-[0_0_30px_rgba(132,204,22,0.15)] dark:group-hover:shadow-[0_0_30px_rgba(207,255,4,0.1)] transition-all duration-500">
+                  {step.icon}
+                </div>
+
+                {/* Text Content */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white group-hover:text-lime-400 dark:group-hover:text-[#CFFF04] transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-base md:text-lg text-zinc-400 leading-relaxed font-medium">
+                    {step.desc}
                   </p>
                 </div>
               </div>
             </motion.div>
-
-            {/* Comparison Side */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="space-y-6"
-            >
-              {/* Bad Model */}
-              <div className="flex items-center justify-between p-6 rounded-lg bg-slate-950 border border-slate-800 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-500/10 p-3 rounded-full shrink-0">
-                    <CrossCircledIcon className="w-6 h-6 text-red-500" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-300">
-                      Retainer Model
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      Billed for time, regardless of result
-                    </div>
-                  </div>
-                </div>
-                <span className="text-red-500 font-mono text-sm font-bold whitespace-nowrap">
-                  -$ LOSS
-                </span>
-              </div>
-
-              {/* Good Model */}
-              <div className="relative overflow-hidden flex items-center justify-between p-6 rounded-lg bg-sky-950/20 border border-sky-500/50 shadow-[0_0_40px_-10px_rgba(14,165,233,0.15)] group hover:bg-sky-950/30 transition-all duration-300">
-                <div className="absolute inset-0 bg-sky-500/5 group-hover:bg-sky-500/10 transition-colors" />
-                <div className="relative flex items-center gap-4">
-                  <div className="bg-green-500/10 p-3 rounded-full shrink-0">
-                    <CheckCircledIcon className="w-6 h-6 text-green-500" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-white">
-                      Eris Intelligence
-                    </div>
-                    <div className="text-xs text-sky-400">
-                      Zero fees unless we find money
-                    </div>
-                  </div>
-                </div>
-                <span className="relative text-green-400 font-mono text-sm font-bold whitespace-nowrap">
-                  +$ CAPITAL
-                </span>
-              </div>
-            </motion.div>
-          </div>
+          ))}
         </div>
+
+        {/* The CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-24 text-center flex flex-col items-center"
+        >
+          <motion.a
+            href="#pricing"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center px-8 py-6 bg-lime-600 hover:bg-lime-700 dark:bg-[#CFFF04] dark:hover:bg-[#b8e600] text-white dark:text-black font-black text-lg md:text-2xl uppercase tracking-wider transition-all shadow-[0_0_40px_rgba(132,204,22,0.3)] dark:shadow-[0_0_40px_rgba(207,255,4,0.3)] hover:shadow-[0_0_60px_rgba(132,204,22,0.5)] dark:hover:shadow-[0_0_60px_rgba(207,255,4,0.5)]"
+          >
+            PUT MY BOQ UNDER THE MICROSCOPE
+          </motion.a>
+          <p className="text-sm md:text-base font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mt-4 flex items-center gap-2">
+            <span className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full animate-pulse" />
+            Find out exactly how much you&apos;re overpaying.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
