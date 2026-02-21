@@ -155,12 +155,25 @@ export default function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-4 pt-12 border-t border-zinc-800 text-center"
+          className="mt-4 pt-12 border-t border-zinc-800 text-center flex flex-col items-center"
         >
-          <p className="text-xl md:text-2xl font-black uppercase text-white max-w-2xl mx-auto leading-tight">
+          <p className="text-xl md:text-2xl font-black uppercase text-white max-w-2xl mx-auto leading-tight mb-8">
             This is not an accident.
             <span className="text-neon"> It is a system. </span>
             And it is designed to survive your silence.
+          </p>
+
+          {/* Agitation Strike CTA */}
+          <motion.a
+            href="#pricing"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center px-8 py-5 bg-red-600 hover:bg-red-700 text-white font-black text-lg md:text-xl uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:shadow-[0_0_50px_rgba(220,38,38,0.6)]"
+          >
+            FIND MY PHANTOM MARGINS
+          </motion.a>
+          <p className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest mt-3">
+            Before they pour the next slab.
           </p>
         </motion.div>
       </div>

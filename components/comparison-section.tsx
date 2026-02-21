@@ -369,9 +369,9 @@ export default function ComparisonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-20 text-center flex flex-col items-center"
         >
-          <p className="text-xl md:text-3xl font-black uppercase text-zinc-900 dark:text-white leading-tight max-w-4xl mx-auto">
+          <p className="text-xl md:text-3xl font-black uppercase text-zinc-900 dark:text-white leading-tight max-w-4xl mx-auto mb-8">
             THIS{" "}
             <span className="text-lime-700 dark:text-[#CFFF04] bg-lime-100 dark:bg-[#CFFF04]/10 px-2 mx-1 rounded-sm">
               KES 1.42M DISCREPANCY
@@ -379,14 +379,19 @@ export default function ComparisonSection() {
             WAS HIDDEN ON PAGE 14. WE FOUND 14 SIMILAR &apos;PHANTOM&apos;
             VARIANCES ON THE NEXT 12 PAGES.
           </p>
-          <a
+
+          {/* Logical Proof CTA */}
+          <motion.a
             href="#pricing"
-            className="mt-6 inline-flex items-center gap-2 text-white dark:text-[#CFFF04] font-mono text-sm md:text-base animate-pulse bg-zinc-900 dark:bg-black px-4 py-2 border border-zinc-800 dark:border-[#CFFF04]/30 rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-900 transition-colors"
-            aria-label="See how many hidden costs are in your BOQ"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center px-8 py-5 bg-zinc-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-200 text-white dark:text-black font-black text-lg md:text-xl uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(0,0,0,0.2)] dark:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
           >
-            <span className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full" />
-            HOW MANY ARE CURRENTLY HIDDEN IN YOURS?
-          </a>
+            RUN THE ERIS PROTOCOL ON MY PROJECT
+          </motion.a>
+          <p className="text-xs md:text-sm font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mt-3">
+            Let the math do the talking. Zero upfront fees.
+          </p>
         </motion.div>
       </div>
     </section>
