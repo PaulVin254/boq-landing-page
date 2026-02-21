@@ -18,7 +18,7 @@ export default function Faq() {
           Traditional PMs and QSs often charge a percentage of the total project
           cost. If the cost goes down, their pay goes down. We are mercenaries.
           We only get paid when the cost drops. Our incentives are 100% aligned
-          with your wallet, not the contractor's.
+          with your wallet, not the contractor&apos;s.
         </div>
       ),
     },
@@ -28,8 +28,8 @@ export default function Faq() {
         <div className="text-zinc-400 text-base leading-relaxed">
           <strong className="text-white">Zero delays.</strong> We guarantee a
           48-hour turnaround for the preliminary scan. We work in the shadows
-          while your site prep continues. You don't pause a single excavator
-          while we hunt for your missing millions.
+          while your site prep continues. You don&apos;t pause a single
+          excavator while we hunt for your missing millions.
         </div>
       ),
     },
@@ -38,9 +38,9 @@ export default function Faq() {
       content: (
         <div className="text-zinc-400 text-base leading-relaxed">
           <strong className="text-white">The Godfather Offer.</strong> If we
-          don't find at least KES 500,000 in leakage, you pay KES 0. You get a
-          clean bill of health for free. You literally cannot lose money by
-          handing us your BOQ.
+          don&apos;t find at least KES 500,000 in leakage, you pay KES 0. You
+          get a clean bill of health for free. You literally cannot lose money
+          by handing us your BOQ.
         </div>
       ),
     },
@@ -49,11 +49,11 @@ export default function Faq() {
       content: (
         <div className="text-zinc-400 text-base leading-relaxed">
           <strong className="text-white">
-            We are the bad guys so you don't have to be.
+            We are the bad guys so you don&apos;t have to be.
           </strong>{" "}
-          We don't argue; we just present undeniable mathematical proof. You
-          hand them the revised numbers and blame "the auditors." It keeps your
-          hands clean while saving your capital.
+          We don&apos;t argue; we just present undeniable mathematical proof.
+          You hand them the revised numbers and blame &quot;the auditors.&quot;
+          It keeps your hands clean while saving your capital.
         </div>
       ),
     },
@@ -94,8 +94,8 @@ export default function Faq() {
             <span className="text-[#CFFF04]">YOUR OBJECTIONS, DESTROYED.</span>
           </h2>
           <p className="max-w-2xl text-xl text-zinc-400 font-medium">
-            If you are still hesitating, it's because of one of these five
-            reasons. Let's address them directly.
+            If you are still hesitating, it&apos;s because of one of these five
+            reasons. Let&apos;s address them directly.
           </p>
         </div>
         <div className="flex w-full max-w-3xl">

@@ -118,8 +118,8 @@ export default function Testimonials() {
             <span className="text-[#CFFF04]">KENYAN DEVELOPERS.</span>
           </h2>
           <p className="mx-auto max-w-xl text-xl text-zinc-400 font-medium text-center">
-            Don't take our word for it. Listen to the developers who stopped
-            bleeding cash and started building with certainty.
+            Don&apos;t take our word for it. Listen to the developers who
+            stopped bleeding cash and started building with certainty.
           </p>
         </motion.div>
 

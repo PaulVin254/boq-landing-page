@@ -42,7 +42,7 @@ const Footer = () => {
               ERIS ENGINEERING
             </Link>
             <p className="text-sm text-zinc-500 font-medium">
-              Recovering stolen capital for Kenya's elite developers.
+              Recovering stolen capital for Kenya&apos;s elite developers.
             </p>
           </div>
           <div className="flex space-x-3">
