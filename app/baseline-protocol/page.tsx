@@ -68,7 +68,7 @@ export default function BaselineProtocolPage() {
         >
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-              We Don&apos;t Make "Standard" BOQs.
+              We Don&apos;t Make &quot;Standard&quot; BOQs.
               <br />
               We Engineer{" "}
               <span className="text-[#CFFF04]">Tender Weapons.</span>
