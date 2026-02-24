@@ -34,7 +34,9 @@ export default function FinalCtaSection() {
           {/* The Final Boss Button */}
           <div className="pt-8 flex flex-col items-center justify-center space-y-4">
             <motion.a
-              href="#pricing"
+              href="https://tally.so/r/5BzOpP"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full md:w-auto inline-flex items-center justify-center px-10 py-8 bg-black text-white font-black text-2xl md:text-4xl uppercase tracking-widest transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.7)] border-4 border-black hover:border-white group"

@@ -382,7 +382,9 @@ export default function ComparisonSection() {
 
           {/* Logical Proof CTA */}
           <motion.a
-            href="#pricing"
+            href="https://tally.so/r/5BzOpP"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center justify-center px-8 py-5 bg-zinc-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-200 text-white dark:text-black font-black text-lg md:text-xl uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(0,0,0,0.2)] dark:shadow-[0_0_30px_rgba(255,255,255,0.2)]"

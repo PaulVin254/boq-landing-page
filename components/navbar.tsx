@@ -88,7 +88,13 @@ export default function NavBar() {
             </Link>
 
             <Button asChild variant="ghost" size="sm">
-              <Link href="#pricing">Pricing</Link>
+              <a
+                href="https://tally.so/r/5BzOpP"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pricing
+              </a>
             </Button>
 
             <Button asChild variant="ghost" size="sm">

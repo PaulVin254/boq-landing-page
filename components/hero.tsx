@@ -45,7 +45,9 @@ export default function Hero() {
             className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 pt-4 flex-col"
           >
             <a
-              href="#pricing"
+              href="https://tally.so/r/5BzOpP"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center shadow-[0_0_30px_rgba(207,255,4,0.3)] dark:shadow-[0_0_30px_rgba(207,255,4,0.4)] hover:shadow-[0_0_50px_rgba(207,255,4,0.6)] text-lg md:text-xl font-black uppercase tracking-wider px-10 py-6 bg-lime-600 hover:bg-lime-700 dark:bg-[#CFFF04] dark:hover:bg-[#b8e600] text-white dark:text-black transition-all duration-300"
             >
               UPLOAD BOQ FOR INTERROGATION

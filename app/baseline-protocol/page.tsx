@@ -218,7 +218,9 @@ export default function BaselineProtocolPage() {
           className="text-center flex flex-col items-center"
         >
           <Link
-            href="https://tally.so/r/your-form-id" // Replace with actual tally link
+            href="https://tally.so/r/5BzOpP"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center px-8 py-6 md:px-12 md:py-8 font-black text-black uppercase tracking-widest text-lg md:text-2xl bg-[#CFFF04] hover:bg-white transition-all duration-300 overflow-hidden rounded-none"
           >
             <span className="relative z-10 flex items-center gap-3">

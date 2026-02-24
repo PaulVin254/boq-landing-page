@@ -90,7 +90,9 @@ export default function GuaranteeSection() {
               {/* Massive CTA */}
               <div className="pt-8 flex flex-col items-center justify-center space-y-4">
                 <motion.a
-                  href="#pricing"
+                  href="https://tally.so/r/5BzOpP"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full md:w-auto inline-flex items-center justify-center px-8 py-6 bg-lime-600 hover:bg-lime-700 dark:bg-[#CFFF04] dark:hover:bg-[#b8e600] text-white dark:text-black font-black text-xl md:text-2xl uppercase tracking-wider transition-all shadow-[0_0_40px_rgba(132,204,22,0.4)] dark:shadow-[0_0_40px_rgba(207,255,4,0.4)] hover:shadow-[0_0_60px_rgba(132,204,22,0.6)] dark:hover:shadow-[0_0_60px_rgba(207,255,4,0.6)]"

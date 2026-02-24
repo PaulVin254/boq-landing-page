@@ -116,7 +116,9 @@ export default function ProtocolSection() {
           className="mt-24 text-center flex flex-col items-center"
         >
           <motion.a
-            href="#pricing"
+            href="https://tally.so/r/5BzOpP"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center justify-center px-8 py-6 bg-lime-600 hover:bg-lime-700 dark:bg-[#CFFF04] dark:hover:bg-[#b8e600] text-white dark:text-black font-black text-lg md:text-2xl uppercase tracking-wider transition-all shadow-[0_0_40px_rgba(132,204,22,0.3)] dark:shadow-[0_0_40px_rgba(207,255,4,0.3)] hover:shadow-[0_0_60px_rgba(132,204,22,0.5)] dark:hover:shadow-[0_0_60px_rgba(207,255,4,0.5)]"

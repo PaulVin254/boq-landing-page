@@ -165,7 +165,9 @@ export default function ProblemSection() {
 
           {/* Agitation Strike CTA */}
           <motion.a
-            href="#pricing"
+            href="https://tally.so/r/5BzOpP"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center justify-center px-8 py-5 bg-red-600 hover:bg-red-700 text-white font-black text-lg md:text-xl uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:shadow-[0_0_50px_rgba(220,38,38,0.6)]"
