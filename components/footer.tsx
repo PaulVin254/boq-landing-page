@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { TwitterLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,14 +13,14 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      name: "Twitter",
-      href: "#",
-      icon: TwitterLogoIcon,
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61581890138497",
+      icon: Facebook,
     },
     {
-      name: "LinkedIn",
-      href: "#",
-      icon: LinkedInLogoIcon,
+      name: "Instagram",
+      href: "https://www.instagram.com/erisbuilders/",
+      icon: Instagram,
     },
   ];
 

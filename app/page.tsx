@@ -4,10 +4,7 @@ import ProtocolSection from "@/components/protocol-section";
 import ComparisonSection from "@/components/comparison-section";
 import BountySection from "@/components/bounty-section";
 import GuaranteeSection from "@/components/guarantee-section";
-import Partners from "@/components/partners";
-import Stats from "@/components/stats";
 import Testimonials from "@/components/testimonials";
-import Pricing from "@/components/pricing";
 import Faq from "@/components/faq";
 import FinalCtaSection from "@/components/final-cta-section";
 import Footer from "@/components/footer";
@@ -21,10 +18,7 @@ export default function Home() {
       <ProtocolSection />
       <BountySection />
       <GuaranteeSection />
-      <Partners />
       <Testimonials />
-      <Stats />
-      <Pricing />
       <Faq />
       <FinalCtaSection />
       <Footer />
