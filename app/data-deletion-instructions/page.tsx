@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "User Data Deletion Instructions for Eris Engineering WhatsApp Business API interactions.",
   alternates: {
-    canonical: "/data-deletion-instructions",
+    canonical: "https://audit.eris.co.ke/data-deletion-instructions",
   },
 };
 
