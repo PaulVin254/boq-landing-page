@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
 import {
   ShieldAlert,
@@ -12,9 +13,41 @@ import {
   Clock,
   CreditCard,
   CheckCircle2,
+  X,
+  Loader2,
 } from "lucide-react";
 
 export default function BaselineProtocolPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit request.");
+      }
+
+      setIsSuccess(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || "An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black text-white selection:bg-[#CFFF04] selection:text-black font-sans relative overflow-hidden">
       {/* Background Elements */}
@@ -48,13 +81,18 @@ export default function BaselineProtocolPage() {
             Critical Vulnerability Detected
           </div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[1.1] mb-8">
-            You Cannot Audit What You Have{" "}
-            <span className="text-[#CFFF04]">Not Measured.</span>
+            If You Don&apos;t Have Your Own Math,{" "}
+            <span className="text-[#CFFF04]">
+              You Are Signing a Blank Cheque.
+            </span>
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed max-w-3xl mx-auto">
-            Entering a high-stakes construction phase without a financial map is
-            a <strong className="text-white">strategic failure</strong>. You are
-            flying blind into a contractor&apos;s trap.
+            Without a verified measurement, you aren&apos;t building a
+            project—you&apos;re funding a contractor&apos;s lifestyle. Most
+            owners lose{" "}
+            <strong className="text-white">20% of their budget</strong> before
+            the first brick is laid because they trusted the contractor&apos;s
+            math.
           </p>
         </motion.div>
 
@@ -68,15 +106,15 @@ export default function BaselineProtocolPage() {
         >
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-              We Don&apos;t Make &quot;Standard&quot; BOQs.
+              We Don&apos;t Print Bills.
               <br />
-              We Engineer{" "}
-              <span className="text-[#CFFF04]">Tender Weapons.</span>
+              We Draw <span className="text-[#CFFF04]">Battle Lines.</span>
             </h2>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-              An Eris Baseline BOQ is a mathematically optimized document
-              designed to strip away contractor leverage and put you in absolute
-              control.
+              An Eris Baseline BOQ is a forensic breakdown of every single nail,
+              bag of cement, and ton of steel required for your build. We strip
+              away the &quot;padding&quot; so you only pay for what actually
+              goes into the ground.
             </p>
           </div>
 
@@ -84,18 +122,18 @@ export default function BaselineProtocolPage() {
             {[
               {
                 icon: Target,
-                title: "Force Transparency",
-                desc: "Contractors must bid against our engineered rates, not their 'preferred' margins. We dictate the terms of engagement.",
+                title: "Total Transparency",
+                desc: "Contractors bid against our rates. We set the price; they either meet it or lose the job.",
               },
               {
                 icon: Crosshair,
-                title: "Eliminate Ghost Quantities",
-                desc: "Every bag of cement and ton of steel is calculated to the precise engineering tolerance. Zero padding. Zero fat.",
+                title: "Kill The Ghosts",
+                desc: 'We calculate steel and concrete to the millimetre. No "estimated" bags. No "hidden" lorry loads.',
               },
               {
                 icon: Lock,
-                title: "Lock The Perimeter",
-                desc: "Provides a fixed legal benchmark. If the contractor deviates, the burden of proof is on them, not your wallet.",
+                title: "Legal Lockdown",
+                desc: "This BOQ is your legal shield. If the contractor deviates by even one bag, the burden of proof is on them, not your bank account.",
               },
             ].map((feature, i) => (
               <motion.div
@@ -133,13 +171,18 @@ export default function BaselineProtocolPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-3 h-3 rounded-full bg-[#CFFF04] animate-pulse" />
               <h2 className="text-2xl md:text-3xl font-black uppercase tracking-widest text-white">
-                The Precision Baseline Protocol
+                The Foundation Audit
               </h2>
             </div>
 
             <p className="text-zinc-400 text-lg mb-10">
-              We will ingest your architectural and structural drawings to
-              generate a Master Forensic BOQ.
+              We strip down your architectural and structural drawings to create
+              a Private Market Benchmark. You will know exactly what your
+              project should cost before you even look at a tender. Without an
+              Eris BOQ, the contractor&apos;s quote is just a &quot;random
+              number generator&quot; designed to drain you—stop buying the
+              contractor a new Hilux using the &quot;extra&quot; 200 bags of
+              cement billed for the substructure.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -169,7 +212,7 @@ export default function BaselineProtocolPage() {
                   <CreditCard className="w-6 h-6 text-[#CFFF04] shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold text-white uppercase tracking-wider mb-1">
-                      The Investment
+                      The Security Deposit
                     </h4>
                     <p className="text-zinc-400">
                       KES 50,000 - 150,000 <br />
@@ -199,7 +242,8 @@ export default function BaselineProtocolPage() {
                 <div className="mt-4 pt-4 border-t border-zinc-800 flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-[#CFFF04] shrink-0" />
                   <p className="text-xs text-zinc-300 font-medium">
-                    This makes the Forensic Baseline effectively FREE when you
+                    Your KES 50k - 150k payment is a Security Deposit for your
+                    millions. This makes the Audit effectively FREE when you
                     move to the execution phase. You aren&apos;t spending money;
                     you are depositing it.
                   </p>
@@ -217,18 +261,16 @@ export default function BaselineProtocolPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center flex flex-col items-center"
         >
-          <Link
-            href="https://tally.so/r/5BzOpP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center px-8 py-6 md:px-12 md:py-8 font-black text-black uppercase tracking-widest text-lg md:text-2xl bg-[#CFFF04] hover:bg-white transition-all duration-300 overflow-hidden rounded-none"
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="group relative inline-flex items-center justify-center px-8 py-6 md:px-12 md:py-8 font-black text-black uppercase tracking-widest text-lg md:text-2xl bg-[#CFFF04] hover:bg-white transition-all duration-300 overflow-hidden rounded-none border-none outline-none cursor-pointer"
           >
             <span className="relative z-10 flex items-center gap-3">
-              Request Baseline Quotation
+              STOP THE BLEED: START AUDIT
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          </Link>
+          </button>
           <p className="mt-6 text-zinc-500 font-bold tracking-widest uppercase text-sm flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             Target Turnaround: 24 Hours for Quote Issuance
@@ -242,6 +284,140 @@ export default function BaselineProtocolPage() {
           © {new Date().getFullYear()} Eris Engineering. All Rights Reserved.
         </p>
       </footer>
+
+      {/* Embedded Form Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-zinc-950 border border-zinc-800 p-8 w-full max-w-md relative"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {isSuccess ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-[#CFFF04]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-8 h-8 text-[#CFFF04]" />
+                  </div>
+                  <h3 className="text-2xl font-black uppercase text-white mb-2">
+                    Target Acquired.
+                  </h3>
+                  <p className="text-zinc-400 font-medium">
+                    We will contact you within 24 hours.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-black uppercase text-white mb-2 tracking-tight">
+                      Initiate Audit
+                    </h3>
+                    <p className="text-sm text-zinc-400 font-medium">
+                      Enter your details below to secure your project math.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="w-full bg-zinc-900 border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#CFFF04] transition-colors"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="w-full bg-zinc-900 border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#CFFF04] transition-colors"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        required
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className="w-full bg-zinc-900 border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#CFFF04] transition-colors"
+                        placeholder="+254..."
+                      />
+                    </div>
+
+                    {errorMessage && (
+                      <div className="text-red-500 text-sm font-medium pt-2">
+                        {errorMessage}
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#CFFF04] text-black font-black uppercase tracking-widest py-4 mt-4 hover:bg-white transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        "Submit Request"
+                      )}
+                    </button>
+                  </form>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
