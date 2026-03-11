@@ -27,7 +27,7 @@ export default function Faq() {
       content: (
         <div className="text-zinc-400 text-base leading-relaxed">
           <strong className="text-white">Zero delays.</strong> We guarantee a
-          48-hour turnaround for the preliminary scan. We work in the shadows
+          72-hour turnaround for the preliminary scan. We work in the shadows
           while your site prep continues. You don&apos;t pause a single
           excavator while we hunt for your missing millions.
         </div>
@@ -58,7 +58,7 @@ export default function Faq() {
       ),
     },
     {
-      title: "How exactly does the 20% Recovery Bounty work?",
+      title: "How exactly does the 5% Recovery Bounty work?",
       content: (
         <div className="text-zinc-400 text-base leading-relaxed">
           <strong className="text-white">Pure performance.</strong> If we find

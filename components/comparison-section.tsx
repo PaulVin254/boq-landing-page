@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ComparisonSection() {
   return (
-    <section className="w-full py-24 bg-white dark:bg-black text-zinc-900 dark:text-white relative overflow-hidden font-sans transition-colors duration-300">
+    <section className="w-full py-24 bg-white dark:bg-black text-zinc-900 dark:text-white relative overflow-hidden transition-colors duration-300">
       {/* Subtle noise texture overlay (Matching ProblemSection) */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply dark:mix-blend-normal"

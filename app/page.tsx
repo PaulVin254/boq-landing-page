@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-dvh">
       <Hero />
-      <ProblemSection />
       <ComparisonSection />
+      <ProblemSection />
       <ProtocolSection />
       <BountySection />
       <GuaranteeSection />

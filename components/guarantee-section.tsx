@@ -101,7 +101,7 @@ export default function GuaranteeSection() {
                 </motion.a>
                 <p className="text-sm font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-widest flex items-center gap-2">
                   <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                  Preliminary Variance Scan: 48-Hour Turnaround
+                  Preliminary Variance Scan: 72-Hour Turnaround
                 </p>
               </div>
             </div>

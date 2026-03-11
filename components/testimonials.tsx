@@ -40,7 +40,7 @@ export default function Testimonials() {
       role: "Property Owner, Runda",
       avatar: "https://i.pravatar.cc/150?img=17",
       content:
-        "I was skeptical at first, but the KES 500k guarantee removed all risk. Within 48 hours, they handed me a forensic report showing KES 2.4M in over-specs. Best ROI on any project.",
+        "I was skeptical at first, but the KES 500k guarantee removed all risk. Within 72 hours, they handed me a forensic report showing KES 2.4M in over-specs. Best ROI on any project.",
       rating: 5,
     },
     {
