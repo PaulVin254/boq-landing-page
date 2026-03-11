@@ -5,7 +5,7 @@ import { ShieldAlert } from "lucide-react";
 
 export default function GuaranteeSection() {
   return (
-    <section className="w-full py-24 bg-zinc-100 dark:bg-[#0a0a0a] text-zinc-900 dark:text-white relative overflow-hidden font-sans transition-colors duration-300">
+    <section className="w-full py-24 bg-zinc-100 dark:bg-[#0a0a0a] text-zinc-900 dark:text-white relative overflow-hidden transition-colors duration-300">
       {/* Subtle noise texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply dark:mix-blend-normal"

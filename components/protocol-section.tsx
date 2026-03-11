@@ -32,7 +32,7 @@ export default function ProtocolSection() {
   ];
 
   return (
-    <section className="w-full py-24 md:py-32 bg-zinc-950 dark:bg-black text-white relative overflow-hidden font-sans">
+    <section className="w-full py-24 md:py-32 bg-zinc-950 dark:bg-black text-white relative overflow-hidden">
       {/* Subtle noise texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen dark:mix-blend-normal"
