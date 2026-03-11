@@ -54,7 +54,8 @@ export default function Hero() {
             </a>
             <p className="text-xs md:text-sm font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mt-3 flex items-center gap-2">
               <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-              Preliminary Variance Scan: 48-Hour Turnaround
+              Get your report within 48 hours. We find you money, or we
+              don&apos;t bill you.
             </p>
           </motion.div>
         </motion.div>

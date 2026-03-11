@@ -116,8 +116,7 @@ export default function DataDeletionInstructionsPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>
                   <strong>Processing Time:</strong> We commit to completing the
-                  manual purge within 48 to 72 hours of receiving your email
-                  request.
+                  manual purge within 72 hours of receiving your email request.
                 </li>
                 <li>
                   <strong>Final Confirmation:</strong> Upon successful deletion,

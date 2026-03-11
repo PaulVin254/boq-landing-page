@@ -36,8 +36,10 @@ export default function ComparisonSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed pt-4">
-            The image on the left is what you signed. The data on the right is
-            what you are actually being delivered.
+            We caught this contractor trying to fund his next Range Rover using
+            a client’s project. Compare the bloated estimate they expected the
+            owner to sign. We stopped the theft and saved the owner millions in
+            72 hours.
           </p>
         </motion.div>
 
@@ -162,7 +164,7 @@ export default function ComparisonSection() {
               <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-lime-500/30 dark:from-[#CFFF04]/20 to-transparent skew-x-12 transform translate-x-4" />
               <h3 className="text-xs font-mono text-lime-400 dark:text-[#CFFF04] uppercase tracking-wider flex items-center gap-2 relative z-10 font-bold m-0">
                 <div className="w-2 h-2 bg-lime-500 dark:bg-[#CFFF04] rounded-full animate-pulse shadow-[0_0_10px_#84cc16] dark:shadow-[0_0_10px_#CFFF04]" />
-                ERIS_PROTOCOL: AUDIT_COMPLETE
+                ERIS_ENGINEERING: AUDIT_COMPLETE
               </h3>
             </div>
 
@@ -376,7 +378,7 @@ export default function ComparisonSection() {
             <span className="text-lime-700 dark:text-[#CFFF04] bg-lime-100 dark:bg-[#CFFF04]/10 px-2 mx-1 rounded-sm">
               KES 1.42M DISCREPANCY
             </span>{" "}
-            WAS HIDDEN ON PAGE 14. WE FOUND 14 SIMILAR &apos;PHANTOM&apos;
+            WAS HIDDEN ON PAGE 32. WE FOUND 14 SIMILAR &apos;PHANTOM&apos;
             VARIANCES ON THE NEXT 12 PAGES.
           </p>
 

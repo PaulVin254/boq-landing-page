@@ -8,7 +8,7 @@ export default function Testimonials() {
       role: "Private Developer, Karen",
       avatar: "https://i.pravatar.cc/150?img=1",
       content:
-        "I thought my PM was honest until Eris ran the numbers. They found 12 tons of phantom steel and KES 4.2M in inflated concrete rates before we even poured the foundation. The 20% bounty model is a no-brainer.",
+        "I thought my PM was honest until Eris ran the numbers. They found 12 tons of phantom steel and KES 4.2M in inflated concrete rates before we even poured the foundation. The 5% bounty model is a no-brainer.",
       rating: 5,
     },
     {
@@ -80,7 +80,7 @@ export default function Testimonials() {
       role: "Head of Projects, Kileleshwa",
       avatar: "https://i.pravatar.cc/150?img=27",
       content:
-        "Zero upfront fees. They found KES 4.8M in leakage, took their 20% bounty, and we kept the rest. It is the most aligned incentive structure in the Kenyan construction industry.",
+        "Zero upfront fees. They found KES 4.8M in leakage, took their 5% bounty, and we kept the rest. It is the most aligned incentive structure in the Kenyan construction industry.",
       rating: 5,
     },
   ];

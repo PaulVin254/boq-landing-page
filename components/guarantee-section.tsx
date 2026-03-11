@@ -50,7 +50,7 @@ export default function GuaranteeSection() {
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter text-zinc-900 dark:text-white">
                 THE{" "}
                 <span className="text-lime-600 dark:text-[#CFFF04]">
-                  KES 500,000
+                  KES 100,000
                 </span>
                 <br />
                 GUARANTEE.
@@ -67,7 +67,7 @@ export default function GuaranteeSection() {
                   <p className="text-base md:text-xl text-zinc-800 dark:text-zinc-200 leading-relaxed font-mono">
                     If the Eris Forensic Audit does not identify at least{" "}
                     <strong className="text-lime-700 dark:text-[#CFFF04]">
-                      KES 500,000
+                      KES 100,000
                     </strong>{" "}
                     in actionable savings, we waive our entire bounty.
                     <br />

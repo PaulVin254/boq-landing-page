@@ -161,11 +161,11 @@ export default function BountySection() {
                   <Check className="w-6 h-6 text-lime-500 dark:text-[#CFFF04] shrink-0 mt-1" />
                   <div>
                     <strong className="block text-lime-400 dark:text-[#CFFF04] uppercase tracking-wide text-sm mb-1">
-                      The 20% Recovery Bounty
+                      The 5% Recovery Bounty
                     </strong>
                     <span className="text-zinc-400 text-sm">
-                      Our fee is strictly 20% of the total savings identified.
-                      We only eat what we kill.
+                      Our fee is strictly 5% of the total savings identified. We
+                      only eat what we kill.
                     </span>
                   </div>
                 </div>
@@ -212,10 +212,10 @@ export default function BountySection() {
               {/* We Take */}
               <div className="p-8 flex flex-col items-center justify-center text-center bg-zinc-50 dark:bg-zinc-900/20">
                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
-                  Eris Bounty (20%)
+                  Eris Bounty (5%)
                 </div>
                 <div className="text-3xl md:text-4xl font-black font-mono text-zinc-600 dark:text-zinc-400">
-                  KES 1.0M
+                  KES 250K
                 </div>
                 <div className="text-xs text-zinc-500 mt-2">
                   Paid only from recovered funds.
@@ -230,7 +230,7 @@ export default function BountySection() {
                     You Retain
                   </div>
                   <div className="text-3xl md:text-4xl font-black font-mono text-black tracking-tighter">
-                    KES 4.0M
+                    KES 4.75M
                   </div>
                   <div className="text-xs text-black/80 mt-2 font-bold">
                     Destined for the contractor&apos;s pocket.
