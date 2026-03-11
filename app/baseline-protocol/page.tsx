@@ -41,8 +41,10 @@ export default function BaselineProtocolPage() {
       }
 
       setIsSuccess(true);
-    } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred.");
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error ? err.message : "An unexpected error occurred.",
+      );
     } finally {
       setIsSubmitting(false);
     }
