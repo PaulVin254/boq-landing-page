@@ -5,7 +5,7 @@ import { ShieldAlert } from "lucide-react";
 
 export default function FinalCtaSection() {
   return (
-    <section className="w-full py-32 bg-lime-500 dark:bg-[#CFFF04] text-black relative overflow-hidden font-sans">
+    <section className="w-full py-32 bg-lime-500 dark:bg-[#CFFF04] text-black relative overflow-hidden">
       {/* Aggressive Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000015_1px,transparent_1px),linear-gradient(to_bottom,#00000015_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
